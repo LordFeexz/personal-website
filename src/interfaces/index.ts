@@ -1,7 +1,11 @@
 import type { ReactNode } from "react";
 
 export interface ChildrenProps {
-  children: ReactNode;
+  readonly children: ReactNode;
+}
+
+export interface OptionalChildrenProps {
+  readonly children?: ReactNode;
 }
 
 export type WindowWithDataLayer = Window & {

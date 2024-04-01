@@ -12,7 +12,6 @@ import CollapseSidebar from "../sidebar/collapseSidebar";
 export default function MainViews({ children }: ChildrenProps) {
   const searchParams = useSearchParams();
   const readMode = searchParams.get("read-mode");
-
   const hideSidebar = readMode?.toLowerCase() === "true";
 
   useEffect(() => {
@@ -24,14 +23,14 @@ export default function MainViews({ children }: ChildrenProps) {
 
   return (
     <div className="flex flex-col justify-center">
-      <div className="flex w-full flex-col justify-center lg:flex-row lg:gap-5">
+      <div className="flex w-full flex-col justify-center lg:flex-row lg:gap-5 lg:hidden">
         {!hideSidebar && (
           <>
             <MobileHeader /> <RunningText />
           </>
         )}
       </div>
-      <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-10 lg:min-h-screen lg:max-w-[854px]">
+      <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-72 lg:min-h-screen lg:max-w-[854px]">
         {children}
       </main>
       {!hideSidebar && <CollapseSidebar />}

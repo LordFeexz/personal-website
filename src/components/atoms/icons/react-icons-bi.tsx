@@ -9,4 +9,5 @@ export {
   BiLeaf as ProfileIcon,
   BiArchive as ProjectIcon,
   BiAt as ThreadsIcon,
+  BiSolidDownvote as DownloadIcon,
 } from "react-icons/bi";
