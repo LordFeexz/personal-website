@@ -1,3 +1,3 @@
 "use client";
 
-export { HiOutlineBriefcase } from "react-icons/hi";
+export { HiOutlineBriefcase, HiCode } from "react-icons/hi";
