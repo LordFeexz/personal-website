@@ -1,10 +1,10 @@
 import Breakline from "@/components/atoms/contents/breakLine";
-import Introduction from "@/components/molleculs/contents/introduction";
+import TechList from "@/components/organs/contents/techList";
 
-export default function Page() {
+export default function TechSection() {
   return (
     <>
-      <Introduction />
+      <TechList />
       <Breakline className="my-6" />
     </>
   );
