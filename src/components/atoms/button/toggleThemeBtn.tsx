@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { BsCloudMoon, BsCloudSun } from "react-icons/bs";
+import {
+  BsCloudMoon,
+  BsCloudSun,
+} from "@/components/atoms/icons/react-icons-bs";
 import useMounted from "@/hooks/useMounted";
 
 export default function ThemeToggleBtn() {
@@ -18,7 +21,9 @@ export default function ThemeToggleBtn() {
       id="dark-mode-switcher"
       aria-label="Toggle Theme"
       onClick={toggleTheme}
-      className="rounded-xl bg-white p-2 dark:bg-neutral-800"
+      className={`rounded-xl p-2 ${
+        resolvedTheme === "light" ? "bg-white" : "bg-neutral-800"
+      }`}
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}

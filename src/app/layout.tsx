@@ -1,3 +1,4 @@
+import MainViews from "@/components/organs/views/mainViews";
 import type { ChildrenProps } from "@/interfaces";
 import MainLayout from "@/layouts/mainLayout";
 import type { Metadata } from "next";
@@ -25,5 +26,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: ChildrenProps) {
-  return <MainLayout>{children}</MainLayout>;
+  return (
+    <MainLayout>
+      <MainViews>{children}</MainViews>
+    </MainLayout>
+  );
 }

@@ -1,3 +1,9 @@
+import Container from "@/components/atoms/contents/container";
+
 export default function Page() {
-  return <h1>ok</h1>;
+  return (
+    <Container data-aos="fade-left">
+      <h1>ok</h1>
+    </Container>
+  );
 }
