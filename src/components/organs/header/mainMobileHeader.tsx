@@ -28,7 +28,7 @@ export default function MobileHeader() {
   }, [isOpen]);
 
   return (
-    <header className="flex flex-col rounded-b-md px-4 py-4 shadow-sm lg:hidden">
+    <section className="flex flex-col rounded-b-md px-4 py-4 shadow-sm lg:hidden">
       <div
         className={`flex w-full justify-between ${
           isOpen ? "items-start" : "items-center"
@@ -75,6 +75,6 @@ export default function MobileHeader() {
       {isMobile && (
         <AnimatePresence>{isOpen && <MobileSidebarMenu />}</AnimatePresence>
       )}
-    </header>
+    </section>
   );
 }

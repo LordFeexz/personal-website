@@ -17,19 +17,19 @@ export default function MainLayout({ children }: ChildrenProps) {
         <title>Ananda Fiqri Personal Website</title>
       </head>
       <body className={soraSans.className}>
-        <Loader
-          color="#05b6d3"
-          initialPosition={0.08}
-          crawlSpeed={200}
-          height={3}
-          crawl={true}
-          showSpinner={true}
-          easing="ease"
-          speed={200}
-          shadow="0 0 10px #05b6d3,0 0 5px #45c6c0"
-        />
-        <Analytics />
         <Suspense>
+          <Loader
+            color="#05b6d3"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={true}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px #05b6d3,0 0 5px #45c6c0"
+          />
+          <Analytics />
           <AppThemeProvider>
             <MaterialTailwindProvider>
               {children}

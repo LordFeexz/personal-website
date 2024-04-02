@@ -1,3 +1,3 @@
 "use client";
 
-export { MdVerified as VerifiedIcon } from "react-icons/md";
+export { MdVerified as VerifiedIcon, MdMenuOpen } from "react-icons/md";

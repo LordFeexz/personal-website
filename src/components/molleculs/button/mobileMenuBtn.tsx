@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import type { Dispatch, SetStateAction } from "react";
 import styled from "@emotion/styled";
+import { GiHamburgerMenu } from "@/components/atoms/icons/react-icons-gi";
+import { MdMenuOpen } from "@/components/atoms/icons/react-icons-md";
 
 const StyledMenuSpan = styled.span`
   width: 100%;
@@ -36,8 +38,13 @@ export default function MobileMenuButton({
 
   const menu = [{ index: 1 }, { index: 2 }, { index: 3 }];
 
-  return (
-    <div
+  return !expand ? (
+    <GiHamburgerMenu
+      className="flex lg:hidden flex-col justify-between h-[21px] w-[26px] cursor-pointer"
+      onClick={toggle}
+    />
+  ) : (
+    <MdMenuOpen
       className="flex lg:hidden flex-col justify-between h-[21px] w-[26px] cursor-pointer"
       onClick={toggle}
     >
@@ -50,6 +57,6 @@ export default function MobileMenuButton({
           )}
         />
       ))}
-    </div>
+    </MdMenuOpen>
   );
 }

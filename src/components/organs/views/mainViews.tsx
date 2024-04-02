@@ -23,13 +23,13 @@ export default function MainViews({ children }: ChildrenProps) {
 
   return (
     <div className="flex flex-col justify-center">
-      <div className="flex w-full flex-col justify-center lg:flex-row lg:gap-5 lg:hidden">
+      <header className="flex w-full flex-col justify-center lg:flex-row lg:gap-5 lg:hidden">
         {!hideSidebar && (
           <>
             <MobileHeader /> <RunningText />
           </>
         )}
-      </div>
+      </header>
       <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-72 lg:min-h-screen lg:max-w-[854px]">
         {children}
       </main>
