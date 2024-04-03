@@ -1,5 +1,6 @@
 import FGFIGMA from "@/components/images/fg-figma-home.png";
 import HACKPARKFLOW from "@/components/images/HackPark-flow.png";
+import OLDPORTFOLIO from "@/components/images/old-portfolio-website.png";
 
 export const PROJECTS = [
   {
@@ -22,6 +23,7 @@ export const PROJECTS = [
     ],
     featured: true,
     img: FGFIGMA,
+    repo: "https://github.com/forumGamers",
   },
   {
     title: "Hackpark",
@@ -38,5 +40,16 @@ export const PROJECTS = [
     ],
     featured: false,
     img: HACKPARKFLOW,
+    repo: "https://github.com/LordFeexz/Hackpark",
+  },
+  {
+    title: "Portfolio website (old)",
+    slug: "portfolio-website-old",
+    desc: "My old portfolio website that build with astro js",
+    stacks: ["astro", "react", "nodejs"],
+    featured: false,
+    img: OLDPORTFOLIO,
+    repo: "https://github.com/LordFeexz/portfolio",
+    live: "https://ananda-fiqri.vercel.app/",
   },
 ];

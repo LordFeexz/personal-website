@@ -1,10 +1,5 @@
-import { Spinner } from "@/components/atoms/loaders/material-tailwind";
+import PageLoader from "@/components/atoms/loaders/pageLoader";
 
 export default function Loading() {
-  return (
-    <div className="flex justify-center items-center">
-      {" "}
-      <Spinner className="h-6 w-6" />{" "}
-    </div>
-  );
+  return <PageLoader />;
 }

@@ -11,3 +11,11 @@ export interface OptionalChildrenProps {
 export type WindowWithDataLayer = Window & {
   dataLayer: Record<string, unknown>[];
 };
+
+export type PageProps<
+  params = Record<string, string>,
+  searchParams = Record<string, string>
+> = {
+  params?: params;
+  searchParams?: searchParams;
+};
