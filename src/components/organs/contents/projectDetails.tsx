@@ -44,11 +44,8 @@ export interface ProjectDetails extends ProjectCardProps {
 
 export default function ProjectDetail({
   title,
-  slug,
   stacks,
-  desc,
   img,
-  featured = false,
   repo,
   live,
 }: ProjectDetails) {
@@ -212,7 +209,7 @@ export default function ProjectDetail({
 
   return (
     <section className="space-y-8 overflow-hidden">
-      <div className="flex flex-col items-start justify-between gap-5 sm:flex-row lg:flex-row lg:items-center">
+      <nav className="flex flex-col items-start justify-between gap-5 sm:flex-row lg:flex-row lg:items-center">
         <div className="flex flex-wrap items-center gap-2">
           <span className="mb-1 text-[15px] text-neutral-700 dark:text-neutral-300">
             Tech Stack :
@@ -228,7 +225,7 @@ export default function ProjectDetail({
           </div>
         </div>
         <ProjectBtn repo={repo} live={live} />
-      </div>
+      </nav>
       <LazyLoadImg
         width={800}
         height={400}
