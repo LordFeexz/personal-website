@@ -14,7 +14,7 @@ class Mailer {
     },
   });
 
-  public sendEmail({ to, html, text }: SendMailProps) {
+  public async sendEmail({ to, html, text }: SendMailProps) {
     const opts: SendMailOptions = {
       from: process.env.EMAIL,
       to,

@@ -8,6 +8,7 @@ import MaterialTailwindProvider from "@/providers/material-tailwind.providers";
 import Analytics from "@/components/atoms/scripts/analytics";
 import { Suspense } from "react";
 import MainFooter from "@/components/atoms/footer/mainFooter";
+import PageLoader from "@/components/atoms/loaders/pageLoader";
 
 export default function MainLayout({ children }: ChildrenProps) {
   return (
@@ -17,7 +18,7 @@ export default function MainLayout({ children }: ChildrenProps) {
         <title>Ananda Fiqri Personal Website</title>
       </head>
       <body className={soraSans.className}>
-        <Suspense>
+        <Suspense fallback={<PageLoader />}>
           <Loader
             color="#05b6d3"
             initialPosition={0.08}

@@ -3,11 +3,12 @@
 import type { ChildrenProps } from "@/interfaces";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import MobileHeader from "../header/mainMobileHeader";
 import RunningText from "@/components/molleculs/contents/runningText";
 import CollapseSidebar from "../sidebar/collapseSidebar";
+import PageLoader from "@/components/atoms/loaders/pageLoader";
 
 export default function MainViews({ children }: ChildrenProps) {
   const searchParams = useSearchParams();
@@ -22,18 +23,20 @@ export default function MainViews({ children }: ChildrenProps) {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center">
-      <header className="flex w-full flex-col justify-center lg:flex-row lg:gap-5 lg:hidden">
-        {!hideSidebar && (
-          <>
-            <MobileHeader /> <RunningText />
-          </>
-        )}
-      </header>
-      <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-72 lg:min-h-screen lg:max-w-[854px]">
-        {children}
-      </main>
-      {!hideSidebar && <CollapseSidebar />}
-    </div>
+    <Suspense fallback={<PageLoader />}>
+      <div className="flex flex-col justify-center">
+        <header className="flex w-full flex-col justify-center lg:flex-row lg:gap-5 lg:hidden">
+          {!hideSidebar && (
+            <>
+              <MobileHeader /> <RunningText />
+            </>
+          )}
+        </header>
+        <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-72 lg:min-h-screen lg:max-w-[854px]">
+          {children}
+        </main>
+        {!hideSidebar && <CollapseSidebar />}
+      </div>
+    </Suspense>
   );
 }
