@@ -14,6 +14,7 @@ export default function MainLayout({ children }: ChildrenProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <GtmHeadScript />
         <title>Ananda Fiqri Personal Website</title>
       </head>

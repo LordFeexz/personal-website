@@ -24,6 +24,9 @@ const nextConfig = {
     EMAIL: process.env.EMAIL,
     PASSWORD: process.env.PASSWORD,
   },
+  compiler: {
+    removeConsole: true,
+  },
 };
 
 export default nextConfig;
