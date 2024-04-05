@@ -1,6 +1,7 @@
-const WithMt = require("@material-tailwind/react/utils/withMt");
+import type { Config } from "tailwindcss";
+import WithMt from "@material-tailwind/react/utils/withMt";
 
-const config = {
+const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
