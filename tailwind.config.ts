@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import WithMt from "@material-tailwind/react/utils/withMt";
+const WithMt = require("@material-tailwind/react/utils/withMt");
 
 const config: Config = {
   content: [
