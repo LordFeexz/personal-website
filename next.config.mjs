@@ -27,6 +27,9 @@ const nextConfig = {
   compiler: {
     removeConsole: true,
   },
+  experimental: {
+    webpackBuildWorker: true,
+  },
 };
 
 export default nextConfig;
