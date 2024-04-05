@@ -2,7 +2,6 @@
 
 import type { ChildrenProps } from "@/interfaces";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import MobileHeader from "../header/mainMobileHeader";

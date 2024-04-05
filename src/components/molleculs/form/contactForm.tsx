@@ -1,7 +1,5 @@
 "use client";
 
-import { Button } from "@/components/atoms/button/material-tailwind";
-import { Input, Textarea } from "@/components/atoms/form/material-tailwind";
 import { useState, useEffect, type ChangeEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { useFormStatus } from "react-dom";
@@ -59,41 +57,34 @@ export default function ContactForm() {
   return (
     <>
       <div className="flex w-full flex-col space-y-4 md:flex-row md:space-x-2 md:space-y-0">
-        <label className="w-full font-sora text-xl">
-          name
-          <Input
-            variant="outlined"
+        <div className="w-full font-sora text-xl space-y-2">
+          <input
             value={data.name}
             name="name"
             onChange={onChangeHandler}
             placeholder="name"
-            color="blue"
-            className="cursor-pointer active:cursor-text !bg-gray-100"
+            className="w-full rounded-lg bg-neutral-50 p-2 outline outline-neutral-300 focus:outline-neutral-400 dark:bg-neutral-900 dark:outline-neutral-700"
           />
-        </label>
-        <label className="w-full text-xl font-sora">
-          email
-          <Input
-            color="blue"
-            variant="outlined"
+        </div>
+        <div className="w-full text-xl font-sora space-y-2">
+          <input
             value={data.email}
             name="email"
             onChange={onChangeHandler}
             placeholder="email"
-            className="cursor-pointer active:cursor-text !bg-gray-100"
+            className="w-full rounded-lg bg-neutral-50 p-2 outline outline-neutral-300 focus:outline-neutral-400 dark:bg-neutral-900 dark:outline-neutral-700"
           />
-        </label>
+        </div>
       </div>
-      <Textarea
+      <textarea
         color="blue"
         name="message"
         value={data.message}
         onChange={onChangeHandler}
-        variant="outlined"
         placeholder="message"
-        className="cursor-pointer active:cursor-text !bg-gray-100"
+        className="w-full rounded-lg bg-neutral-50 p-2 outline outline-neutral-300 focus:outline-neutral-400 dark:bg-neutral-900 dark:outline-neutral-700"
       />
-      <Button
+      <button
         disabled={disabledCond}
         type="submit"
         color="blue"
@@ -102,7 +93,7 @@ export default function ContactForm() {
         }`}
       >
         send
-      </Button>
+      </button>
     </>
   );
 }

@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import WithMt from "@material-tailwind/react/utils/withMt";
 
 const config: Config = {
   content: [
@@ -86,4 +85,4 @@ const config: Config = {
   darkMode: "selector",
   plugins: [],
 };
-export default WithMt(config);
+export default config;

@@ -1,10 +1,10 @@
 import GtmHeadScript from "@/components/atoms/scripts/gtmHead";
 import "@/styles/globals.css";
+import "aos/dist/aos.css";
 import Loader from "nextjs-toploader";
 import { soraSans } from "@/libs/font";
 import type { ChildrenProps } from "@/interfaces";
 import AppThemeProvider from "@/providers/theme.providers";
-import MaterialTailwindProvider from "@/providers/material-tailwind.providers";
 import Analytics from "@/components/atoms/scripts/analytics";
 import { Suspense } from "react";
 import MainFooter from "@/components/atoms/footer/mainFooter";
@@ -33,10 +33,8 @@ export default function MainLayout({ children }: ChildrenProps) {
           />
           <Analytics />
           <AppThemeProvider>
-            <MaterialTailwindProvider>
-              {children}
-              <MainFooter />
-            </MaterialTailwindProvider>
+            {children}
+            <MainFooter />
           </AppThemeProvider>
         </Suspense>
       </body>

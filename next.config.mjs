@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   env: {
     DOMAIN: process.env.DOMAIN,
     NEXT_APP_GTM_ID: process.env.NEXT_APP_GTM_ID,
@@ -26,9 +23,6 @@ const nextConfig = {
   },
   compiler: {
     removeConsole: true,
-  },
-  experimental: {
-    webpackBuildWorker: true,
   },
 };
 
