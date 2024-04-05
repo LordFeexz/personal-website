@@ -1,4 +1,4 @@
-import IndofundPNG from "@/components/images/IndofundLogo.png";
+import IndofundPNG from "@/components/images/Indofund-b.webp";
 import FGJPG from "@/components/images/FgLogo.jpg";
 import BalkanDreamPNG from "@/components/images/Balkan-Dreams-Logo.png";
 

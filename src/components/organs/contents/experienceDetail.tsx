@@ -41,7 +41,7 @@ export default function ExperienceDetail({
         {endDate ? format(end_date, "MMM yyyy") : "Present"} as a{" "}
         <strong>{position}</strong>
       </p>
-      {!!responsibility && responsibility.length && (
+      {!!responsibility && !!responsibility.length && (
         <PointText text={responsibility} />
       )}
     </section>
