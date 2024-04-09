@@ -11,10 +11,8 @@ export default function MobileSidebarMenu() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div>
-        <Breakline className="mt-2" />
-        <SidebarMenu lists={SIDEBAR_MENU} />
-      </div>
+      <Breakline className="mt-2" />
+      <SidebarMenu lists={SIDEBAR_MENU} />
     </motion.nav>
   );
 }

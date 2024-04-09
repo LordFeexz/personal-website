@@ -1,3 +1,6 @@
+import ME from "@/components/images/me2.jpg";
+import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
+
 export interface CopyrightProps {
   isHover: boolean;
 }
@@ -9,19 +12,19 @@ export default function Copyright({ isHover }: CopyrightProps) {
         <>
           <span>©</span>
           <span>{new Date().getFullYear()}</span>
-          <span>with</span>
-          <span data-testid="love" className="animate-pulse text-red-500">
-            ❤
-          </span>
           <span>by</span>
           <span className="cursor-pointer hover:dark:text-neutral-400">
-            LordFeexz
+            Lord Feexz
           </span>
         </>
       ) : (
-        <span data-testid="love" className="animate-pulse text-red-500">
-          ❤
-        </span>
+        <LazyLoadImg
+          src={ME}
+          alt="me"
+          className="animate-pulse rounded-full object-cover object-center"
+          width={175}
+          height={175}
+        />
       )}
     </footer>
   );

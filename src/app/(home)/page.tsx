@@ -9,3 +9,5 @@ export default function Page() {
     </>
   );
 }
+
+export const dinamic = "force-static";

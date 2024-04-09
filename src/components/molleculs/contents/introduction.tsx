@@ -4,7 +4,7 @@ export default function Introduction() {
   return (
     <section className="space-y-2 bg-cover bg-no-repeat">
       <header className="flex items-center justify-between">
-        <div className="font-sora flex gap-2 text-2xl font-medium lg:text-3xl">
+        <div className="font-sora flex flex-row justify-between text-2xl font-medium lg:text-3xl">
           <TypographAnimation
             sequence={[
               "Hi i'm Ananda Fiqri",

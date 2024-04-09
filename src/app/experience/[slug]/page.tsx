@@ -33,3 +33,7 @@ export function generateMetadata({
       }
     : {};
 }
+
+export async function generateStaticParams() {
+  return CAREER.map(({ slug }) => ({ slug }));
+}

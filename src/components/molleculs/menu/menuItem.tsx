@@ -2,7 +2,6 @@
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { BsArrowRightShort } from "@/components/atoms/icons/react-icons-bs";
 import useMenu from "@/hooks/useMenu";
 
@@ -29,18 +28,6 @@ export default function MenuItem({
   const { hideMenu } = useMenu();
   const isExternalUrl = href?.includes("http");
   const isHashLink = href === "#";
-  const pathname = usePathname();
-  const url = new URL(href, process.env.NEXT_PUBLIC_DOMAIN);
-
-  const activeClasses = `flex ${
-    !isHover
-      ? "justify-center px-4 py-2 rounded-lg lg:rounded-full lg:p-2"
-      : "lg:rounded-lg lg:py-2 lg:px-4"
-  } gap-2 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 ${
-    pathname === url.pathname
-      ? "bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-300"
-      : "hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-100 hover:lg:rounded-lg lg:hover:gap-3 lg:transition-all lg:duration-300"
-  }`;
 
   const onClickHandler = () => {
     hideMenu();
@@ -58,7 +45,14 @@ export default function MenuItem({
   };
 
   const components = () => (
-    <div className={`${activeClasses} ${className}`} {...handler}>
+    <div
+      className={`flex ${
+        !isHover
+          ? "justify-center px-4 py-2 rounded-lg lg:rounded-full lg:p-2"
+          : "lg:rounded-lg lg:py-2 lg:px-4 translate-x-4"
+      } gap-2 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-black hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:gap-3 lg:transition-all lg:duration-300 hover:translate-x-12 hover:dark:!bg-slate-300 hover:bg-neutral-800 ${className}`}
+      {...handler}
+    >
       {icon}
       {isHover && (
         <div className="ml-1 animate-enter-left whitespace-nowrap text-sm delay-1000">
