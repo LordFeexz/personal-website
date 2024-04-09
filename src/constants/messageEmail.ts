@@ -1,5 +1,5 @@
-export default function getMessageHtml() {
-  return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+export const getMessageHtml = () =>
+  `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html
       dir="ltr"
       xmlns="http://www.w3.org/1999/xhtml"
@@ -1452,4 +1452,3 @@ export default function getMessageHtml() {
       </body>
     </html>
     `;
-}

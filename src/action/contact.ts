@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import mailService from "@/libs/nodemailer";
-import getMessageHtml from "@/constants/messageEmail";
+import { getMessageHtml } from "@/constants/messageEmail";
 
 export const sendContactAction = async (formData: FormData) => {
   const name = formData.get("name");
