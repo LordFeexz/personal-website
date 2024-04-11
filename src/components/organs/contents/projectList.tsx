@@ -14,7 +14,7 @@ export default function ProjectsList() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3, delay: idx * 0.1 }}
         >
-          <ProjectCard {...el} />
+          <ProjectCard {...el} img={el.thumbnail} />
         </motion.div>
       ))}
     </section>

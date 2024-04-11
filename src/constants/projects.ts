@@ -1,8 +1,14 @@
 import FGFIGMA from "@/components/images/fg-figma-home.png";
 import HACKPARKFLOW from "@/components/images/HackPark-flow.png";
 import OLDPORTFOLIO from "@/components/images/old-portfolio-website.png";
+import HACKPARKCHALLANGE from "@/components/images/challange.png";
+import HACKPARKDESC from "@/components/images/desc.png";
+import HACKAPARKSUCCESSSTORY from "@/components/images/success-story.png";
+import HACKPARKTESTING from "@/components/images/testing.png";
+import HACKPARKTIMELINE from "@/components/images/timeline.png";
+import type { MyProjects } from "@/interfaces/projects";
 
-export const PROJECTS = [
+export const PROJECTS: MyProjects[] = [
   {
     title: "Forum Gamers",
     slug: "forum-gamers",
@@ -22,8 +28,15 @@ export const PROJECTS = [
       "cassandra",
     ],
     featured: true,
-    img: FGFIGMA,
+    imgs: [
+      {
+        url: FGFIGMA,
+        alt: "forum-gamers-figma",
+        desc: "Forum Gamers Initial Figma Design",
+      },
+    ],
     repo: "https://github.com/forumGamers",
+    thumbnail: FGFIGMA,
   },
   {
     title: "Hackpark",
@@ -39,8 +52,40 @@ export const PROJECTS = [
       "redis",
     ],
     featured: false,
-    img: HACKPARKFLOW,
+    imgs: [
+      {
+        url: HACKPARKFLOW,
+        alt: "hackpark-flow",
+        desc: "hackpark designed app flow",
+      },
+      {
+        url: HACKPARKCHALLANGE,
+        alt: "hackpark-challange",
+        desc: "hackpark challange story",
+      },
+      {
+        url: HACKAPARKSUCCESSSTORY,
+        alt: "hackpark-success-story",
+        desc: "hackpark success story",
+      },
+      {
+        url: HACKPARKDESC,
+        alt: "hackpark-description",
+        desc: "what hackpark actually is?",
+      },
+      {
+        url: HACKPARKTESTING,
+        alt: "hackpark-testing",
+        desc: "hackpark unit testing result",
+      },
+      {
+        url: HACKPARKTIMELINE,
+        alt: "hackpark-timeline",
+        desc: "hackpark work timeline",
+      },
+    ],
     repo: "https://github.com/LordFeexz/Hackpark",
+    thumbnail: HACKPARKFLOW,
   },
   {
     title: "Portfolio website (old)",
@@ -48,8 +93,15 @@ export const PROJECTS = [
     desc: "My old portfolio website that build with astro js",
     stacks: ["astro", "react", "nodejs"],
     featured: false,
-    img: OLDPORTFOLIO,
+    imgs: [
+      {
+        url: OLDPORTFOLIO,
+        alt: "old-portfolio",
+        desc: "my old portfolio website",
+      },
+    ],
     repo: "https://github.com/LordFeexz/portfolio",
     live: "https://ananda-fiqri.vercel.app/",
+    thumbnail: OLDPORTFOLIO,
   },
 ];

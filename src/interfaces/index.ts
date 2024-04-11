@@ -16,6 +16,6 @@ export type PageProps<
   params = Record<string, string>,
   searchParams = Record<string, string>
 > = {
-  params?: params;
+  params: params;
   searchParams?: searchParams;
 };

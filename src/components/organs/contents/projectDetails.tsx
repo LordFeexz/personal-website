@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import type { ProjectCardProps } from "../card/projectCard";
 import {
   BiLogoGoLang,
   BiLogoPostgresql,
@@ -35,17 +34,23 @@ import {
 import Link from "next/link";
 import BasicTooltip from "@/components/atoms/tooltip/basic";
 import ProjectBtn from "@/components/molleculs/button/projectBtn";
-import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
+import Slider, {
+  type SliderImgs,
+} from "@/components/molleculs/contents/slider";
 
-export interface ProjectDetails extends ProjectCardProps {
+export interface ProjectDetails {
   repo: string;
   live?: string;
+  imgs: SliderImgs[];
+  stacks: string[];
+  featured?: boolean;
+  slug: string;
 }
 
 export default function ProjectDetail({
-  title,
+  slug,
   stacks,
-  img,
+  imgs,
   repo,
   live,
 }: ProjectDetails) {
@@ -226,13 +231,7 @@ export default function ProjectDetail({
         </div>
         <ProjectBtn repo={repo} live={live} />
       </nav>
-      <LazyLoadImg
-        width={800}
-        height={400}
-        alt={title}
-        className="transition-all duration-300 hover:scale-105"
-        src={img}
-      />
+      <Slider imgs={imgs} width={800} height={400} slug={slug} />
     </section>
   );
 }
