@@ -9,6 +9,8 @@ import Analytics from "@/components/atoms/scripts/analytics";
 import { Suspense } from "react";
 import MainFooter from "@/components/atoms/footer/mainFooter";
 import PageLoader from "@/components/atoms/loaders/pageLoader";
+import { VercelAnalytics } from "@/providers/vercel.analytics.providers";
+import { SpeedInsights } from "@/providers/vercel.speedInsight.providers";
 
 export default function MainLayout({ children }: ChildrenProps) {
   return (
@@ -36,6 +38,8 @@ export default function MainLayout({ children }: ChildrenProps) {
             {children}
             <MainFooter />
           </AppThemeProvider>
+          <VercelAnalytics />
+          <SpeedInsights />
         </Suspense>
       </body>
     </html>
