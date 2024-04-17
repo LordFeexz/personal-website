@@ -24,6 +24,7 @@ export default function AboutSummary() {
         technologies, I am poised to contribute my expertise and passion for
         innovation to a dynamic development team.
       </p>
+      <p>Ambition to move from middle class to upper class</p>
     </div>
   );
 }

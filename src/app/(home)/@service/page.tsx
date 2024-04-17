@@ -1,13 +1,11 @@
 import Breakline from "@/components/atoms/contents/breakLine";
-import Introduction from "@/components/molleculs/contents/introduction";
+import ServicesList from "@/components/organs/contents/serviceList";
 
 export default function Page() {
   return (
     <>
-      <Introduction />
+      <ServicesList />
       <Breakline className="my-6" />
     </>
   );
 }
-
-export const dynamic = "force-static";

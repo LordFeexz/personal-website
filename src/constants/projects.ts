@@ -6,6 +6,7 @@ import HACKPARKDESC from "@/components/images/desc.png";
 import HACKAPARKSUCCESSSTORY from "@/components/images/success-story.png";
 import HACKPARKTESTING from "@/components/images/testing.png";
 import HACKPARKTIMELINE from "@/components/images/timeline.png";
+import PERSONALWEBSITE from "@/components/images/personal-website.png";
 import type { MyProjects } from "@/interfaces/projects";
 
 export const PROJECTS: MyProjects[] = [
@@ -88,10 +89,26 @@ export const PROJECTS: MyProjects[] = [
     thumbnail: HACKPARKFLOW,
   },
   {
+    title: "Personal Website",
+    slug: "personal-website",
+    desc: "My Personal Website that build with next js",
+    stacks: ["nextjs", "react", "bun", "tailwind"],
+    featured: true,
+    imgs: [
+      {
+        url: PERSONALWEBSITE,
+        alt: "personal-website",
+        desc: "My new personal website",
+      },
+    ],
+    thumbnail: PERSONALWEBSITE,
+    repo: "https://github.com/LordFeexz/personal-website",
+  },
+  {
     title: "Portfolio website (old)",
     slug: "portfolio-website-old",
     desc: "My old portfolio website that build with astro js",
-    stacks: ["astro", "react", "nodejs"],
+    stacks: ["astro", "react", "nodejs", "tailwind"],
     featured: false,
     imgs: [
       {

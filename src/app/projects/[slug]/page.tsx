@@ -7,12 +7,19 @@ import type { PageProps } from "@/interfaces";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-export default function Page({ params }: PageProps<{ slug: string }>) {
+export default function Page({
+  params,
+  searchParams,
+}: PageProps<{ slug: string }, { readMode?: string }>) {
   const data = PROJECTS.find((el) => el.slug === params?.slug);
   if (!data) notFound();
 
   return (
-    <Container data-aos="fade-left">
+    <Container
+      data-aos="fade-left"
+      as="section"
+      readMode={searchParams?.readMode?.toLowerCase() === "true"}
+    >
       <BackBtn url="/projects" />
       <PageHeading title={data.title} desc={data.desc} />
       <ProjectDetail {...data} />

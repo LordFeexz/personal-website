@@ -5,10 +5,12 @@ import type { ReactNode } from "react";
 export interface HomeLayoutProps extends ChildrenProps {
   career: ReactNode;
   tech: ReactNode;
+  service: ReactNode;
 }
 
 export default function HomeLayout({
   children,
+  service,
   career,
   tech,
 }: HomeLayoutProps) {
@@ -16,6 +18,7 @@ export default function HomeLayout({
     <Container data-aos="fade-left">
       {children}
       {career}
+      {service}
       {tech}
     </Container>
   );

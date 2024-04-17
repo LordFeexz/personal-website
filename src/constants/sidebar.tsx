@@ -5,6 +5,7 @@ import {
   ProfileIcon,
   ProjectIcon,
 } from "@/components/atoms/icons/react-icons-bi";
+import { FaServicestack } from "@/components/atoms/icons/react-icons-fa";
 
 export const SIDEBAR_MENU: SidebarMenu[] = [
   {
@@ -29,6 +30,12 @@ export const SIDEBAR_MENU: SidebarMenu[] = [
     title: "Contact",
     href: "/contact",
     icon: <ContactIcon size={20} />,
+    isExternal: false,
+  },
+  {
+    title: "Services",
+    href: "/service",
+    icon: <FaServicestack size={20} />,
     isExternal: false,
   },
 ];

@@ -1,12 +1,10 @@
-"use client";
-
 import type { ChildrenProps } from "@/interfaces";
-import { useSearchParams } from "next/navigation";
 
 export interface ContainerProps extends ChildrenProps {
   className?: string;
   withMarginTop?: boolean;
   as?: "div" | "main" | "section";
+  readMode?: boolean;
   [key: string]: any | undefined;
 }
 
@@ -15,12 +13,11 @@ export default function Container({
   className = "",
   withMarginTop = true,
   as = "div",
+  readMode,
   ...rest
 }: ContainerProps) {
-  const searchParams = useSearchParams();
-  const readMode = searchParams?.get("read-mode");
   const classname = `mb-10 ${
-    (readMode?.toLowerCase() !== "true" || withMarginTop) && "mt-6"
+    (readMode || withMarginTop) && "mt-6"
   } p-4 md:p-8 lg:pr-0 ${className}`;
 
   switch (as) {

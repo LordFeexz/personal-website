@@ -3,16 +3,19 @@
 import type { ChildrenProps } from "@/interfaces";
 import AOS from "aos";
 import { Suspense, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import MobileHeader from "../header/mainMobileHeader";
 import RunningText from "@/components/molleculs/contents/runningText";
 import CollapseSidebar from "../sidebar/collapseSidebar";
 import PageLoader from "@/components/atoms/loaders/pageLoader";
 
-export default function MainViews({ children }: ChildrenProps) {
-  const searchParams = useSearchParams();
-  const readMode = searchParams.get("read-mode");
-  const hideSidebar = readMode?.toLowerCase() === "true";
+export interface MainViewsProps extends ChildrenProps {
+  readMode?: boolean;
+}
+
+export default function MainViews({ children, readMode }: MainViewsProps) {
+  // const searchParams = useSearchParams();
+  // const readMode = searchParams.get("read-mode");
+  // const hideSidebar = readMode?.toLowerCase() === "true";
 
   useEffect(() => {
     AOS.init({
@@ -25,7 +28,7 @@ export default function MainViews({ children }: ChildrenProps) {
     <Suspense fallback={<PageLoader />}>
       <div className="flex flex-col justify-center">
         <header className="flex w-full flex-col justify-center lg:flex-row lg:gap-5 lg:hidden">
-          {!hideSidebar && (
+          {!readMode && (
             <>
               <MobileHeader /> <RunningText />
             </>
@@ -34,7 +37,7 @@ export default function MainViews({ children }: ChildrenProps) {
         <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-72 lg:min-h-screen lg:max-w-[854px]">
           {children}
         </main>
-        {!hideSidebar && <CollapseSidebar />}
+        {!readMode && <CollapseSidebar />}
       </div>
     </Suspense>
   );

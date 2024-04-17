@@ -2,7 +2,7 @@
 
 import { sendPageView } from "@/libs/googleTagManager";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import Script from "next/script";
 
 export default function Analytics() {
@@ -15,7 +15,7 @@ export default function Analytics() {
   }, [searchParams, pathname]);
 
   return (
-    <>
+    <Suspense>
       <noscript>
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
@@ -79,6 +79,6 @@ export default function Analytics() {
     });`,
         }}
       />
-    </>
+    </Suspense>
   );
 }

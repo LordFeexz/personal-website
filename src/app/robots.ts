@@ -1,3 +1,6 @@
+import { CAREER } from "@/constants/career";
+import { PROJECTS } from "@/constants/projects";
+import { SERVICES } from "@/constants/services";
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -6,8 +9,17 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/private/",
+      disallow: ["/api/*"],
     },
-    sitemap: [`${domain}/sitemap.xml`],
+    sitemap: [
+      `${domain}/sitemap.xml`,
+      ...SERVICES.map(({ title }) => `${domain}/service/${title}/sitemap.xml`),
+      ...PROJECTS.map(({ slug }) => `${domain}/projects/${slug}/sitemap.xml`),
+      ...PROJECTS.map(({ slug, imgs }) =>
+        imgs.map(({ alt }) => `${domain}/projects/${slug}/${alt}/sitemap.xml`)
+      ).flat(),
+      ...CAREER.map(({ slug }) => `${domain}/experience/${slug}/sitemap.xml`),
+    ],
+    host: domain,
   };
 }

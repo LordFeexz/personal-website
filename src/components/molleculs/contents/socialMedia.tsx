@@ -1,8 +1,5 @@
 import { SOCIALMEDIA } from "@/constants/socialMedia";
-import Dinamic from "next/dynamic";
-const ContactCard = Dinamic(() => import("../card/contactCard"), {
-  ssr: false,
-});
+import ContactCard from "@/components/molleculs/card/contactCard";
 
 export default function SocialMediaList() {
   return (

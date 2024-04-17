@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   PROJECTS.forEach((el) => {
     el.imgs.forEach((val) => {
       data.push({
-        url: `${domain}/projects/${el.slug}/${val}`,
+        url: `${domain}/projects/${el.slug}/${val.alt}`,
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 3,

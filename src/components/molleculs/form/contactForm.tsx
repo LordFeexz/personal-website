@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, type ChangeEvent } from "react";
+import { useState, useEffect, type ChangeEvent, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useFormStatus } from "react-dom";
 import { swalError, swalSuccess } from "@/libs/swal";
@@ -14,7 +14,7 @@ export interface ContactFormProps {
 export default function ContactForm() {
   const { pending } = useFormStatus();
   const params = useSearchParams();
-  const searchParams = new URLSearchParams(params!);
+  const searchParams = new URLSearchParams(params.toString());
   const success = searchParams.get("success");
   const error = searchParams.get("error");
   const [data, setData] = useState<ContactFormProps>({
@@ -55,7 +55,7 @@ export default function ContactForm() {
   const disabledCond = pending || !data.email || !data.name || !data.message;
 
   return (
-    <>
+    <Suspense>
       <div className="flex w-full flex-col space-y-4 md:flex-row md:space-x-2 md:space-y-0">
         <div className="w-full font-sora text-xl space-y-2">
           <input
@@ -94,6 +94,6 @@ export default function ContactForm() {
       >
         send
       </button>
-    </>
+    </Suspense>
   );
 }

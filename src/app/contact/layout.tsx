@@ -22,3 +22,5 @@ export default function ContactLayout({
     </Container>
   );
 }
+
+export const dynamic = "force-dynamic";
