@@ -19,6 +19,10 @@ export default function MainLayout({ children }: ChildrenProps) {
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <GtmHeadScript />
         <title>Ananda Fiqri Personal Website</title>
+        <meta
+          name="google-site-verification"
+          content={`google-site-verification: ${process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION}.html`}
+        ></meta>
       </head>
       <body className={soraSans.className}>
         <Suspense fallback={<PageLoader />}>

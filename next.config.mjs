@@ -29,6 +29,8 @@ const nextConfig = {
       process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
     EMAIL: process.env.EMAIL,
     PASSWORD: process.env.PASSWORD,
+    NEXT_PUBLIC_GOOGLE_VERIFICATION:
+      process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
   compiler: {
     removeConsole: true,
