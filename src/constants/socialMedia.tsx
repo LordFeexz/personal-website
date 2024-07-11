@@ -3,6 +3,7 @@ import {
   BsInstagram,
   BsLinkedin,
   BsDiscord,
+  BsTwitterX,
 } from "@/components/atoms/icons/react-icons-bs";
 
 export const SOCIALMEDIA = [
@@ -29,5 +30,11 @@ export const SOCIALMEDIA = [
     href: "https://discord/users/330341010926206976",
     icon: <BsDiscord size={20} />,
     backgroundColor: "bg-purple-700",
+  },
+  {
+    title: "Twitter",
+    href: "https://x.com/AnandaFiqri1403",
+    icon: <BsTwitterX size={20} />,
+    backgroundColor: "bg-black",
   },
 ];

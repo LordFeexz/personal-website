@@ -23,4 +23,4 @@ export default function ContactLayout({
   );
 }
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";

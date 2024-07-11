@@ -9,6 +9,7 @@ export const CAREER = [
     logo: FGJPG,
     location: "Remote/Indonesia",
     startDate: new Date("12-20-2022"),
+    endDate: new Date("07-11-2024"),
     slug: "Forum-Gamers",
     responsibility: [
       "Initiate and setup all projects",
@@ -51,5 +52,6 @@ export const CAREER = [
     startDate: new Date("03-01-2024"),
     slug: "Balkan-Dreams",
     responsibility: [],
+    endDate: new Date("06-28-2024"),
   },
 ];

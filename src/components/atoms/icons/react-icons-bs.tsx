@@ -10,4 +10,5 @@ export {
   BsInstagram,
   BsLinkedin,
   BsTiktok,
+  BsTwitterX,
 } from "react-icons/bs";

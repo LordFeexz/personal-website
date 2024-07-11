@@ -46,3 +46,5 @@ export function generateMetadata({
 export async function generateStaticParams() {
   return PROJECTS.map(({ slug }) => ({ slug }));
 }
+
+export const dynamic = "force-static";
