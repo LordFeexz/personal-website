@@ -26,8 +26,6 @@ export default function MenuItem({
 }: MenuItemProps) {
   const [isHovered, setIsHovered] = useState(false);
   const { hideMenu } = useMenu();
-  const isExternalUrl = href?.includes("http");
-  const isHashLink = href === "#";
 
   const onClickHandler = () => {
     hideMenu();
@@ -35,7 +33,6 @@ export default function MenuItem({
   };
 
   const handler = {
-    onClick: onClickHandler,
     onMouseEnter: () => {
       setIsHovered(true);
     },
@@ -44,40 +41,34 @@ export default function MenuItem({
     },
   };
 
-  const components = () => (
-    <div
-      className={`flex hover:lg:rounded-lg hover:lg:py-2 hover:lg:px-4 hover:translate-x-4 justify-center px-4 py-2 rounded-lg lg:rounded-full lg:p-2 gap-2 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-black hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 lg:hover:gap-3 lg:transition-all lg:duration-300 hover:dark:!bg-slate-300 hover:bg-neutral-800 ${className}`}
-      {...handler}
-    >
-      {icon}
-      {isHover && (
-        <div className="ml-1 animate-enter-left whitespace-nowrap text-sm delay-1000">
-          {title}
-        </div>
-      )}
-      <div className="flex-grow lg:hidden">{title}</div>
-      {children && <>{children}</>}
-      {isExternalUrl && isHovered && (
-        <BsArrowRightShort
-          size={22}
-          className="-rotate-45 text-gray-500 lg:transition-all lg:duration-300"
-        />
-      )}
-    </div>
-  );
-
-  return isHashLink ? (
-    <div className="cursor-pointer">{components()}</div>
-  ) : (
+  return (
     <Link
       aria-label={title}
       tabIndex={0}
       href={href}
-      target={isExternalUrl ? "_blank" : ""}
       onClick={onClickHandler}
       prefetch
+      className="cursor-pointer"
     >
-      {components()}
+      <div
+        className={`flex hover:lg:rounded-lg hover:lg:py-2 hover:lg:px-4 hover:scale-105 justify-center px-4 py-2 rounded-lg lg:rounded-full lg:p-2 gap-2 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-black hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 lg:hover:gap-3 lg:transition-all lg:duration-300 hover:dark:!bg-slate-300 hover:bg-neutral-800 ${className}`}
+        {...handler}
+      >
+        {icon}
+        {isHover && (
+          <div className="ml-1 animate-enter-left whitespace-nowrap text-sm delay-1000">
+            {title}
+          </div>
+        )}
+        <div className="flex-grow lg:hidden">{title}</div>
+        {!!children && <>{children}</>}
+        {isHovered && (
+          <BsArrowRightShort
+            size={22}
+            className="-rotate-45 text-gray-500 lg:transition-all lg:duration-300"
+          />
+        )}
+      </div>
     </Link>
   );
 }
