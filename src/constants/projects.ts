@@ -7,6 +7,10 @@ import HACKAPARKSUCCESSSTORY from "@/components/images/success-story.png";
 import HACKPARKTESTING from "@/components/images/testing.png";
 import HACKPARKTIMELINE from "@/components/images/timeline.png";
 import PERSONALWEBSITE from "@/components/images/personal-website.png";
+import FACERECOGNITION from "@/components/images/face-recognition.jpg";
+import FREXAMPLE1 from "@/components/images/face-recognition-example1.png";
+import FREXAMPLE2 from "@/components/images/face-recognition-example2.png";
+import MUKTACHAIN from "@/components/images/blockchain.png";
 import type { MyProjects } from "@/interfaces/projects";
 
 export const PROJECTS: MyProjects[] = [
@@ -120,5 +124,45 @@ export const PROJECTS: MyProjects[] = [
     repo: "https://github.com/LordFeexz/portfolio",
     live: "https://ananda-fiqri.vercel.app/",
     thumbnail: OLDPORTFOLIO,
+  },
+  {
+    title: "Mukta Chain",
+    slug: "mukta-chain",
+    desc: "a TODO blockchain app in rust",
+    repo: "https://github.com/LordFeexz/mukta-chain",
+    thumbnail: MUKTACHAIN,
+    imgs: [
+      {
+        url: MUKTACHAIN,
+        alt: "mukta-chain",
+        desc: "mukta chain",
+      },
+    ],
+    stacks: ["rust"],
+  },
+  {
+    title: "Face Recognition Ai",
+    slug: "face-recognition-ai",
+    desc: "a simple face recognition app using python and opencv",
+    repo: "https://github.com/LordFeexz/simple-face-reconigtion",
+    thumbnail: FACERECOGNITION,
+    imgs: [
+      {
+        url: FACERECOGNITION,
+        alt: "face-recognition-ai",
+        desc: "Face recognition ai",
+      },
+      {
+        url: FREXAMPLE1,
+        alt: "face-recognition-ai-example-1",
+        desc: "Face recognition ai example 1",
+      },
+      {
+        url: FREXAMPLE2,
+        alt: "face-recognition-ai-example-2",
+        desc: "Face recognition ai example 2",
+      },
+    ],
+    stacks: ["python"],
   },
 ];

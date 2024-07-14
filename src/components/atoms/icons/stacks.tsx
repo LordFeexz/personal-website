@@ -31,6 +31,7 @@ export {
   SiVercel,
   SiSocketdotio,
   SiBun,
+  SiRust,
 } from "react-icons/si";
 export { FaReact, FaVuejs } from "react-icons/fa";
 export { DiRedis } from "react-icons/di";

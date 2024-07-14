@@ -32,9 +32,6 @@ const nextConfig = {
     NEXT_PUBLIC_GOOGLE_VERIFICATION:
       process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
-  compiler: {
-    removeConsole: true,
-  },
   pageExtensions: ["js", "jsx", "mdx", "md", "ts", "tsx"],
 };
 

@@ -35,6 +35,7 @@ import {
   FaVuejs,
   DiRedis,
   SiBun,
+  SiRust,
 } from "@/components/atoms/icons/stacks";
 import type { ReactNode } from "react";
 
@@ -214,6 +215,11 @@ export default function ProjectCard({
     redis: (
       <Link target="_blank" href="https://redis.io/">
         <DiRedis size={size} className=" text-red-500" />
+      </Link>
+    ),
+    rust: (
+      <Link target="_blank" href="https://www.rust-lang.org/">
+        <SiRust size={size} className="text-orange-500" />
       </Link>
     ),
   };

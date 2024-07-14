@@ -30,6 +30,8 @@ import {
   FaReact,
   FaVuejs,
   DiRedis,
+  SiRust,
+  SiBun,
 } from "@/components/atoms/icons/stacks";
 import Link from "next/link";
 import BasicTooltip from "@/components/atoms/tooltip/basic";
@@ -210,8 +212,17 @@ export default function ProjectDetail({
         <DiRedis size={size} className=" text-red-500" />
       </Link>
     ),
+    rust: (
+      <Link target="_blank" href="https://www.rust-lang.org/">
+        <SiRust size={size} className="text-orange-500" />
+      </Link>
+    ),
+    bun: (
+      <Link target="_blank" href="https://bun.dev/">
+        <SiBun size={size} className=" text-yellow-500" />
+      </Link>
+    ),
   };
-
   return (
     <section className="space-y-8 overflow-hidden">
       <nav className="flex flex-col items-start justify-between gap-5 sm:flex-row lg:flex-row lg:items-center">
