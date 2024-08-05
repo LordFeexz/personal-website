@@ -9,6 +9,7 @@ import loadMdxFiles from "@/libs/mdx";
 import BackBtn from "@/components/molleculs/button/backBtn";
 import Image from "next/image";
 import Breakline from "@/components/atoms/contents/breakLine";
+import { Meteors } from "@/components/ui/meteors";
 
 export type ServicePageTitleProps = PageProps<
   { title: string },
@@ -30,6 +31,7 @@ export default function Page({
       data-aos="fade-left"
       readMode={searchParams?.readMode?.toLowerCase() === "true"}
     >
+      <Meteors number={20} />
       <BackBtn />
       <PageHeading title={data.title.replaceAll("-", " ")} desc={data.desc} />
       <div className="flex justify-center items-center snap-center py-10 pr-5">

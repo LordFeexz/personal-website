@@ -6,6 +6,7 @@ import { PROJECTS } from "@/constants/projects";
 import type { PageProps } from "@/interfaces";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Meteors } from "@/components/ui/meteors";
 
 export default function Page({
   params,
@@ -20,6 +21,7 @@ export default function Page({
       as="section"
       readMode={searchParams?.readMode?.toLowerCase() === "true"}
     >
+      <Meteors number={20} />
       <BackBtn url="/projects" />
       <PageHeading title={data.title} desc={data.desc} />
       <ProjectDetail {...data} />

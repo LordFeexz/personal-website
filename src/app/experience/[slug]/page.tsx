@@ -1,6 +1,7 @@
 import Container from "@/components/atoms/contents/container";
 import BackBtn from "@/components/molleculs/button/backBtn";
 import ExperienceDetail from "@/components/organs/contents/experienceDetail";
+import { Meteors } from "@/components/ui/meteors";
 import { CAREER } from "@/constants/career";
 import type { PageProps } from "@/interfaces";
 import type { Metadata } from "next";
@@ -19,6 +20,7 @@ export default function Page({
       as="section"
       readMode={searchParams?.readMode?.toLowerCase() === "true"}
     >
+      <Meteors number={20} />
       <BackBtn url="/" />
       <ExperienceDetail {...data} />
     </Container>

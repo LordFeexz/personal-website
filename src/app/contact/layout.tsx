@@ -1,5 +1,6 @@
 import Breakline from "@/components/atoms/contents/breakLine";
 import Container from "@/components/atoms/contents/container";
+import { Meteors } from "@/components/ui/meteors";
 import type { ChildrenProps } from "@/interfaces";
 import type { ReactNode } from "react";
 
@@ -15,6 +16,7 @@ export default function ContactLayout({
 }: ContactLayoutProps) {
   return (
     <Container data-aos="fade-left" as="section">
+      <Meteors number={20} />
       {children}
       {social}
       <Breakline className="my-6" />

@@ -13,10 +13,6 @@ export interface MainViewsProps extends ChildrenProps {
 }
 
 export default function MainViews({ children, readMode }: MainViewsProps) {
-  // const searchParams = useSearchParams();
-  // const readMode = searchParams.get("read-mode");
-  // const hideSidebar = readMode?.toLowerCase() === "true";
-
   useEffect(() => {
     AOS.init({
       duration: 800,
