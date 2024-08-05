@@ -17,7 +17,9 @@ export default function MarqueeElement({
     <Marquee
       direction={direction}
       speed={25}
-      className={withPadding ? "py-3" : ""}
+      className={`${withPadding ? "py-3" : ""} !overflow-x-visible`}
+      pauseOnClick
+      pauseOnHover
     >
       {children}
     </Marquee>

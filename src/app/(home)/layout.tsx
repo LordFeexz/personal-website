@@ -1,5 +1,6 @@
 import Container from "@/components/atoms/contents/container";
 import { Meteors } from "@/components/ui/meteors";
+import { TracingBeam } from "@/components/ui/tracing-beam";
 import type { ChildrenProps } from "@/interfaces";
 import type { ReactNode } from "react";
 
@@ -17,11 +18,13 @@ export default function HomeLayout({
 }: HomeLayoutProps) {
   return (
     <Container data-aos="fade-left">
-      <Meteors number={20} />
-      {children}
-      {career}
-      {service}
-      {tech}
+      <TracingBeam>
+        <Meteors number={20} />
+        {children}
+        {career}
+        {service}
+        {tech}
+      </TracingBeam>
     </Container>
   );
 }

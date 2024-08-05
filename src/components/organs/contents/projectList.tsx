@@ -6,7 +6,7 @@ import { PROJECTS } from "@/constants/projects";
 
 export default function ProjectsList() {
   return (
-    <section className="grid gap-5 pt-2 sm:grid-cols-2">
+    <section className="grid gap-2 pt-2 sm:grid-cols-2">
       {PROJECTS.map((el, idx) => (
         <motion.div
           key={el.title}

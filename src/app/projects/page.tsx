@@ -2,6 +2,7 @@ import Container from "@/components/atoms/contents/container";
 import PageHeading from "@/components/atoms/header/pageHeading";
 import ProjectsList from "@/components/organs/contents/projectList";
 import { Meteors } from "@/components/ui/meteors";
+import { TracingBeam } from "@/components/ui/tracing-beam";
 import type { PageProps } from "@/interfaces";
 import type { Metadata } from "next";
 
@@ -20,9 +21,11 @@ export default function Page({
       as="section"
       readMode={searchParams?.readMode?.toLowerCase() === "true"}
     >
-      <Meteors number={20} />
-      <PageHeading title="My Projects" desc="my projects showcase" />
-      <ProjectsList />
+      <TracingBeam>
+        <Meteors number={20} />
+        <PageHeading title="My Projects" desc="my projects showcase" />
+        <ProjectsList />
+      </TracingBeam>
     </Container>
   );
 }

@@ -33,6 +33,14 @@ const nextConfig = {
       process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
   pageExtensions: ["js", "jsx", "mdx", "md", "ts", "tsx"],
+  images: {
+    remotePatterns: [
+      {
+        hostname: "*",
+        protocol: "https",
+      },
+    ],
+  },
 };
 
 export default withMDX(nextConfig);

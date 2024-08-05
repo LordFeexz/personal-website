@@ -33,172 +33,169 @@ import {
   SiRust,
   SiBun,
 } from "@/components/atoms/icons/stacks";
-import Link from "next/link";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 const size = "100%";
 export const TECHSTACKS: Record<string, ReactNode> = {
   golang: (
-    <Link target="_blank" href="https://go.dev/">
+    <LinkPreview url="https://go.dev/">
       <BiLogoGoLang size={size} className="text-cyan-300" />
-    </Link>
+    </LinkPreview>
   ),
   postgres: (
-    <Link target="_blank" href="https://www.postgresql.org/">
+    <LinkPreview url="https://www.postgresql.org/">
       <BiLogoPostgresql size={size} className=" text-blue-900" />
-    </Link>
+    </LinkPreview>
   ),
   python: (
-    <Link target="_blank" href="https://www.python.org/">
+    <LinkPreview url="https://www.python.org/">
       <BiLogoPython size={size} className=" text-blue-800" />
-    </Link>
+    </LinkPreview>
   ),
   redux: (
-    <Link target="_blank" href="https://redux.js.org/">
+    <LinkPreview url="https://redux.js.org/">
       <BiLogoRedux size={size} className=" text-purple-500" />
-    </Link>
+    </LinkPreview>
   ),
   astro: (
-    <Link target="_blank" href="https://astro.build/">
+    <LinkPreview url="https://astro.build/">
       <SiAstro size={size} className=" text-red-600" />
-    </Link>
+    </LinkPreview>
   ),
   bootstrap: (
-    <Link target="_blank" href="https://getbootstrap.com/">
+    <LinkPreview url="https://getbootstrap.com/">
       {" "}
       <SiBootstrap size={size} className=" text-purple-700" />
-    </Link>
+    </LinkPreview>
   ),
   cassandra: (
-    <Link target="_blank" href="https://cassandra.apache.org/_/index.html">
+    <LinkPreview url="https://cassandra.apache.org/_/index.html">
       <SiApachecassandra size={size} className=" text-blue-300" />
-    </Link>
+    </LinkPreview>
   ),
   css: (
-    <Link target="_blank" href="https://devdocs.io/css/">
+    <LinkPreview url="https://devdocs.io/css/">
       <SiCss3 size={size} className=" text-blue-400" />
-    </Link>
+    </LinkPreview>
   ),
   django: (
-    <Link target="_blank" href="https://www.djangoproject.com/">
+    <LinkPreview url="https://www.djangoproject.com/">
       <SiDjango size={size} className=" text-green-900" />
-    </Link>
+    </LinkPreview>
   ),
   elasticSearch: (
-    <Link target="_blank" href="https://www.elastic.co/elasticsearch">
+    <LinkPreview url="https://www.elastic.co/elasticsearch">
       <SiElasticsearch size={size} className=" text-green-500" />
-    </Link>
+    </LinkPreview>
   ),
   express: (
-    <Link target="_blank" href="https://expressjs.com/">
+    <LinkPreview url="https://expressjs.com/">
       <SiExpress size={size} className=" text-yellow-500" />
-    </Link>
+    </LinkPreview>
   ),
   firebase: (
-    <Link target="_blank" href="https://firebase.google.com/">
+    <LinkPreview url="https://firebase.google.com/">
       <SiFirebase size={size} className=" text-yellow-600" />
-    </Link>
+    </LinkPreview>
   ),
   graphql: (
-    <Link target="_blank" href="https://graphql.org/">
+    <LinkPreview url="https://graphql.org/">
       <SiGraphql size={size} className=" text-pink-500" />
-    </Link>
+    </LinkPreview>
   ),
   heroku: (
-    <Link target="_blank" href="https://www.heroku.com/">
+    <LinkPreview url="https://www.heroku.com/">
       <SiHeroku size={size} className=" text-purple-900" />
-    </Link>
+    </LinkPreview>
   ),
   html: (
-    <Link
-      target="_blank"
-      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
-    >
+    <LinkPreview url="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">
       <SiHtml5 size={size} className=" text-orange-700" />
-    </Link>
+    </LinkPreview>
   ),
   mongoDb: (
-    <Link target="_blank" href="https://www.mongodb.com/">
+    <LinkPreview url="https://www.mongodb.com/">
       <SiMongodb size={size} className=" text-green-500" />
-    </Link>
+    </LinkPreview>
   ),
   mongoose: (
-    <Link target="_blank" href="https://mongoosejs.com/">
+    <LinkPreview url="https://mongoosejs.com/">
       <SiMongoose size={size} className=" text-red-500" />
-    </Link>
+    </LinkPreview>
   ),
   mySql: (
-    <Link target="_blank" href="https://www.mysql.com/">
+    <LinkPreview url="https://www.mysql.com/">
       <SiMysql size={size} className=" text-blue-600" />
-    </Link>
+    </LinkPreview>
   ),
   nestjs: (
-    <Link target="_blank" href="https://nestjs.com/">
+    <LinkPreview url="https://nestjs.com/">
       <SiNestjs size={size} className=" text-red-600" />
-    </Link>
+    </LinkPreview>
   ),
   netlify: (
-    <Link target="_blank" href="https://www.netlify.com/">
+    <LinkPreview url="https://www.netlify.com/">
       <SiNetlify size={size} />
-    </Link>
+    </LinkPreview>
   ),
   nextjs: (
-    <Link target="_blank" href="https://nextjs.org/">
+    <LinkPreview url="https://nextjs.org/">
       <SiNextdotjs size={size} />
-    </Link>
+    </LinkPreview>
   ),
   nodejs: (
-    <Link target="_blank" href="https://nodejs.org/en">
+    <LinkPreview url="https://nodejs.org/en">
       <SiNodedotjs size={size} className=" text-green-900" />
-    </Link>
+    </LinkPreview>
   ),
   rabbitmq: (
-    <Link target="_blank" href="https://www.rabbitmq.com/">
+    <LinkPreview url="https://www.rabbitmq.com/">
       <SiRabbitmq size={size} className=" text-orange-800" />
-    </Link>
+    </LinkPreview>
   ),
   tailwind: (
-    <Link target="_blank" href="https://tailwindcss.com/docs/installation">
+    <LinkPreview url="https://tailwindcss.com/docs/installation">
       <SiTailwindcss size={size} className=" text-blue-400" />
-    </Link>
+    </LinkPreview>
   ),
   typescript: (
-    <Link target="_blank" href="https://www.typescriptlang.org/">
+    <LinkPreview url="https://www.typescriptlang.org/">
       <SiTypescript size={size} className=" text-blue-500" />
-    </Link>
+    </LinkPreview>
   ),
   vercel: (
-    <Link target="_blank" href="https://vercel.com/">
+    <LinkPreview url="https://vercel.com/">
       <SiVercel size={size} />
-    </Link>
+    </LinkPreview>
   ),
   socketio: (
-    <Link target="_blank" href="https://socket.io/">
+    <LinkPreview url="https://socket.io/">
       <SiSocketdotio size={size} className=" text-orange-800" />
-    </Link>
+    </LinkPreview>
   ),
   react: (
-    <Link target="_blank" href="https://react.dev/">
+    <LinkPreview url="https://react.dev/">
       <FaReact size={size} className=" text-blue-600" />
-    </Link>
+    </LinkPreview>
   ),
   vue: (
-    <Link target="_blank" href="https://vuejs.org/">
+    <LinkPreview url="https://vuejs.org/">
       <FaVuejs size={size} className=" text-green-800" />
-    </Link>
+    </LinkPreview>
   ),
   redis: (
-    <Link target="_blank" href="https://redis.io/">
+    <LinkPreview url="https://redis.io/">
       <DiRedis size={size} className=" text-red-500" />
-    </Link>
+    </LinkPreview>
   ),
   rust: (
-    <Link target="_blank" href="https://www.rust-lang.org/">
+    <LinkPreview url="https://www.rust-lang.org/">
       <SiRust size={size} className="text-orange-500" />
-    </Link>
+    </LinkPreview>
   ),
   bun: (
-    <Link target="_blank" href="https://bun.dev/">
+    <LinkPreview url="https://bun.dev/">
       <SiBun size={size} className=" text-yellow-500" />
-    </Link>
+    </LinkPreview>
   ),
 };
