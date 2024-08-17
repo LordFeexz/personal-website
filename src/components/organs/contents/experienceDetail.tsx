@@ -3,12 +3,13 @@ import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
 import type { CareerCardProps } from "../card/careerCard";
 import { BsBuilding } from "@/components/atoms/icons/react-icons-bs";
 import PointText from "@/components/molleculs/contents/pointText";
+import { memo } from "react";
 
 export interface ExperienceDetailProps extends CareerCardProps {
   responsibility?: string[];
 }
 
-export default function ExperienceDetail({
+function ExperienceDetail({
   position,
   company,
   logo,
@@ -47,3 +48,5 @@ export default function ExperienceDetail({
     </section>
   );
 }
+
+export default memo(ExperienceDetail);

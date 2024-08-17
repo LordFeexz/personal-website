@@ -4,14 +4,15 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import CodeBlockViews from "./codeBlockViews";
 import type { ChildrenProps } from "@/interfaces";
+import { memo } from "react";
 
-export default function ReadMeView({ children }: ChildrenProps) {
-  const Table = ({ children }: ChildrenProps) => (
-    <div className="table-container">
-      <table className="table w-full">{children}</table>
-    </div>
-  );
+const Table = memo(({ children }: ChildrenProps) => (
+  <div className="table-container">
+    <table className="table w-full">{children}</table>
+  </div>
+));
 
+function ReadMeView({ children }: ChildrenProps) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -69,3 +70,5 @@ export default function ReadMeView({ children }: ChildrenProps) {
     </ReactMarkdown>
   );
 }
+
+export default memo(ReadMeView);

@@ -9,13 +9,14 @@ import MeJpg from "@/components/images/me.jpeg";
 import BasicTooltip from "@/components/atoms/tooltip/basic";
 import { GITHUB_PROFILE } from "@/constants";
 import Image from "next/image";
+import { memo } from "react";
 
 export interface ProfileHeaderProps {
   expand: boolean;
   imgSize: number;
 }
 
-export default function ProfileHeader({ expand, imgSize }: ProfileHeaderProps) {
+function ProfileHeader({ expand, imgSize }: ProfileHeaderProps) {
   return (
     <article
       className={clsx(
@@ -77,3 +78,5 @@ export default function ProfileHeader({ expand, imgSize }: ProfileHeaderProps) {
     </article>
   );
 }
+
+export default memo(ProfileHeader);

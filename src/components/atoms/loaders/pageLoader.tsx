@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { MutatingDots } from "./react-loader-spinner";
 
-export default function Loading() {
+function Loading() {
   return (
     <MutatingDots
       visible={true}
@@ -14,3 +15,5 @@ export default function Loading() {
     />
   );
 }
+
+export default memo(Loading);

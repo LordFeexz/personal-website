@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { memo, type ReactNode } from "react";
 import Link from "next/link";
 import { BsGithub } from "@/components/atoms/icons/react-icons-bs";
 import { FiExternalLink } from "@/components/atoms/icons/react-icons-fi";
@@ -14,7 +14,7 @@ export interface ProjectLinkProps {
   icon?: ReactNode;
 }
 
-export default function ProjectBtn({ repo, live }: ProjectBtnProps) {
+function ProjectBtn({ repo, live }: ProjectBtnProps) {
   function LinkComponent({ url, text, icon }: ProjectLinkProps) {
     return (
       <Link href={url} target="_blank" className="cursor-pointer" passHref>
@@ -50,3 +50,5 @@ export default function ProjectBtn({ repo, live }: ProjectBtnProps) {
     </div>
   );
 }
+
+export default memo(ProjectBtn);

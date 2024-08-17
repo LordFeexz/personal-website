@@ -1,26 +1,33 @@
 // Input component extends from shadcnui - https://ui.shadcn.com/docs/components/input
 "use client";
-import * as React from "react";
+import {
+  forwardRef,
+  type InputHTMLAttributes,
+  useCallback,
+  useState,
+} from "react";
 import { cn } from "@/libs/utils";
 import { useMotionTemplate, useMotionValue, motion } from "framer-motion";
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     const radius = 100; // change this to increase the rdaius of the hover effect
-    const [visible, setVisible] = React.useState(false);
+    const [visible, setVisible] = useState(false);
 
     let mouseX = useMotionValue(0);
     let mouseY = useMotionValue(0);
 
-    function handleMouseMove({ currentTarget, clientX, clientY }: any) {
-      let { left, top } = currentTarget.getBoundingClientRect();
+    const handleMouseMove = useCallback(
+      ({ currentTarget, clientX, clientY }: any) => {
+        let { left, top } = currentTarget.getBoundingClientRect();
 
-      mouseX.set(clientX - left);
-      mouseY.set(clientY - top);
-    }
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+      },
+      [mouseX, mouseY]
+    );
     return (
       <motion.div
         style={{

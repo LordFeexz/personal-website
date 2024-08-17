@@ -6,24 +6,24 @@ import { sendDataLayer } from "@/libs/googleTagManager";
 import useMenu from "@/hooks/useMenu";
 import MarqueeElement from "@/components/atoms/contents/marquee";
 import request from "@/libs/axios";
+import { memo, useCallback } from "react";
 
-export default function RunningText() {
+function RunningText() {
   const { data, isLoading } = useSWR("/api/ads", request.fetcher<any>);
 
   const { isOpen } = useMenu();
   const pathname = usePathname();
-
-  if (isLoading) return;
-
   const ads = data?.data;
 
-  function onRedirect() {
+  const onRedirect = useCallback(() => {
     sendDataLayer({
       event: "running_text_clicked",
       page_path: pathname,
     });
     window.open((ads as any)?.link, "_blank");
-  }
+  }, [ads, pathname]);
+
+  if (isLoading) return;
 
   return (ads as any)?.isShow && !isOpen ? (
     <button
@@ -38,3 +38,5 @@ export default function RunningText() {
     </button>
   ) : null;
 }
+
+export default memo(RunningText);

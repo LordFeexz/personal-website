@@ -3,11 +3,13 @@
 import { motion } from "framer-motion";
 import ProjectCard from "../card/projectCard";
 import { PROJECTS } from "@/constants/projects";
+import { memo, useMemo } from "react";
 
-export default function ProjectsList() {
+function ProjectsList() {
+  const datas = useMemo(() => PROJECTS, []);
   return (
     <section className="grid gap-2 pt-2 sm:grid-cols-2">
-      {PROJECTS.map((el, idx) => (
+      {datas.map((el, idx) => (
         <motion.div
           key={el.title}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -20,3 +22,5 @@ export default function ProjectsList() {
     </section>
   );
 }
+
+export default memo(ProjectsList);

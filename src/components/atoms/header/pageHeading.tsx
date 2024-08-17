@@ -1,9 +1,11 @@
+import { memo } from "react";
+
 export interface PageHeadingProps {
   title: string;
   desc?: string;
 }
 
-export default function PageHeading({ title, desc }: PageHeadingProps) {
+function PageHeading({ title, desc }: PageHeadingProps) {
   return (
     <hgroup>
       <h1 className="font-sora text-2xl font-medium">{title}</h1>
@@ -13,3 +15,5 @@ export default function PageHeading({ title, desc }: PageHeadingProps) {
     </hgroup>
   );
 }
+
+export default memo(PageHeading);

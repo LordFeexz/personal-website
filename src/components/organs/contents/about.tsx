@@ -1,4 +1,6 @@
-export default function AboutSummary() {
+import { memo } from "react";
+
+function AboutSummary() {
   return (
     <div
       data-testid="summary"
@@ -28,3 +30,5 @@ export default function AboutSummary() {
     </div>
   );
 }
+
+export default memo(AboutSummary);

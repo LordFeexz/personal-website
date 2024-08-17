@@ -1,28 +1,31 @@
 "use client";
 
-import type { MouseEventHandler } from "react";
+import { memo, useCallback, type MouseEventHandler } from "react";
 import { usePathname } from "next/navigation";
 import { DownloadIcon } from "@/components/atoms/icons/react-icons-bi";
 import { sendDataLayer } from "@/libs/googleTagManager";
 
-export default function ResumeBtn() {
+function ResumeBtn() {
   const pathname = usePathname();
-  const download: MouseEventHandler = (e) => {
-    e.preventDefault();
+  const download: MouseEventHandler = useCallback(
+    (e) => {
+      e.preventDefault();
 
-    sendDataLayer({
-      event: "resume_clicked",
-      page_path: pathname,
-    });
+      sendDataLayer({
+        event: "resume_clicked",
+        page_path: pathname,
+      });
 
-    const link = document.createElement("a");
-    link.href = "/assets/Ananda-Fiqri-Resume.pdf";
-    link.download = "Ananda-Fiqri-Resume";
+      const link = document.createElement("a");
+      link.href = "/assets/Ananda-Fiqri-Resume.pdf";
+      link.download = "Ananda-Fiqri-Resume";
 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    },
+    [pathname]
+  );
 
   return (
     <button
@@ -43,3 +46,5 @@ export default function ResumeBtn() {
     </button>
   );
 }
+
+export default memo(ResumeBtn);

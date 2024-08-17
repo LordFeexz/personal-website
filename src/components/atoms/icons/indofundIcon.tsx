@@ -1,4 +1,6 @@
-export default function IndofundIcon() {
+import { memo } from "react";
+
+function IndofundIcon() {
   return (
     <svg
       width="148"
@@ -35,3 +37,5 @@ export default function IndofundIcon() {
     </svg>
   );
 }
+
+export default memo(IndofundIcon);

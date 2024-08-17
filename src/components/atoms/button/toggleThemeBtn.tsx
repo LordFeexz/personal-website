@@ -7,14 +7,15 @@ import {
   BsCloudSun,
 } from "@/components/atoms/icons/react-icons-bs";
 import useMounted from "@/hooks/useMounted";
+import { memo, useCallback } from "react";
 
-export default function ThemeToggleBtn() {
+function ThemeToggleBtn() {
   const { setTheme, resolvedTheme } = useTheme();
   const mount = useMounted();
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setTheme(resolvedTheme === "light" ? "dark" : "light");
-  };
+  }, [resolvedTheme, setTheme]);
 
   return !mount ? null : (
     <motion.button
@@ -32,3 +33,5 @@ export default function ThemeToggleBtn() {
     </motion.button>
   );
 }
+
+export default memo(ThemeToggleBtn);

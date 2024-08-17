@@ -1,7 +1,8 @@
 import { SOCIALMEDIA } from "@/constants/socialMedia";
 import ContactCard from "@/components/molleculs/card/contactCard";
+import { memo } from "react";
 
-export default function SocialMediaList() {
+function SocialMediaList() {
   return (
     <section className="flex flex-col items-center space-y-4">
       <h2>Find me on</h2>
@@ -13,3 +14,5 @@ export default function SocialMediaList() {
     </section>
   );
 }
+
+export default memo(SocialMediaList);

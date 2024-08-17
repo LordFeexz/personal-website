@@ -1,7 +1,8 @@
 import { sendContactAction } from "@/action/contact";
 import ContactForm from "@/components/molleculs/form/contactForm";
+import { memo } from "react";
 
-export default function ContactFormWrapper() {
+function ContactFormWrapper() {
   return (
     <div className="flex flex-col space-y-4 mt-12">
       <hgroup className="flex flex-col items-center">
@@ -16,3 +17,5 @@ export default function ContactFormWrapper() {
     </div>
   );
 }
+
+export default memo(ContactFormWrapper);

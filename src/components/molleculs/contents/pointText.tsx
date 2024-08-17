@@ -1,12 +1,14 @@
+import { memo } from "react";
+
 export interface PointTextProps {
   text: string[];
 }
 
-export default function PointText({ text }: PointTextProps) {
+function PointText({ text }: PointTextProps) {
   return (
     <ul className="flex flex-col space-y-6 text-neutral-800 dark:text-neutral-300 font-sora">
-      {text.map((el, idx) => (
-        <li key={idx}>
+      {text.map((el) => (
+        <li key={el}>
           <span className="mx-2">*</span>
           {el}
         </li>
@@ -14,3 +16,5 @@ export default function PointText({ text }: PointTextProps) {
     </ul>
   );
 }
+
+export default memo(PointText);

@@ -2,6 +2,7 @@ import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";
+import { memo } from "react";
 
 export interface ServiceDetailCardProps {
   title: string;
@@ -10,7 +11,7 @@ export interface ServiceDetailCardProps {
   img: string | StaticImageData;
 }
 
-export default function ServiceDetailCard({
+function ServiceDetailCard({
   title,
   desc,
   featured,
@@ -48,3 +49,5 @@ export default function ServiceDetailCard({
     </CardContainer>
   );
 }
+
+export default memo(ServiceDetailCard);

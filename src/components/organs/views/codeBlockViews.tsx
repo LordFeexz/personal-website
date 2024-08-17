@@ -2,7 +2,13 @@
 
 import dynamic from "next/dynamic";
 
-import { useEffect, useState, type ReactElement } from "react";
+import {
+  memo,
+  useCallback,
+  useEffect,
+  useState,
+  type ReactElement,
+} from "react";
 import {
   HiCheckCircle as CheckIcon,
   HiOutlineClipboardCopy as CopyIcon,
@@ -47,10 +53,13 @@ const CodeBlock = ({
   const [_, copy] = useCopyToClipboard();
   const match = /language-(\w+)/.exec(className || "");
 
-  const handleCopy = (code: string) => {
-    copy(code);
-    setIsCopied(true);
-  };
+  const handleCopy = useCallback(
+    (code: string) => {
+      copy(code);
+      setIsCopied(true);
+    },
+    [copy]
+  );
 
   useEffect(() => {
     if (isCopied) {
@@ -107,7 +116,7 @@ const CodeBlock = ({
   );
 };
 
-export default dynamic(() => Promise.resolve(CodeBlock), {
+export default dynamic(() => Promise.resolve(memo(CodeBlock)), {
   ssr: false,
   loading: () => <div className="mb-12 mt-12 h-36 w-full" />,
 });

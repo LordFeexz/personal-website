@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { memo, useCallback, useMemo } from "react";
 
 import { FiArrowLeftCircle } from "react-icons/fi";
 
@@ -9,19 +10,22 @@ export interface BackBtnProps {
   url?: string;
 }
 
-export default function BackBtn({ url }: BackBtnProps) {
+function BackBtn({ url }: BackBtnProps) {
   const router = useRouter();
 
-  const handleOnClick = () => {
+  const handleOnClick = useCallback(() => {
     if (url) {
       router.push(url);
     } else {
       router.back();
     }
-  };
+  }, [router, url]);
 
-  const className =
-    "flex gap-2 w-max hover:gap-3 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-400 cursor-pointer";
+  const className = useMemo(
+    () =>
+      "flex gap-2 w-max hover:gap-3 items-center pb-5 transition-all duration-300 font-medium text-neutral-600 dark:text-neutral-400 cursor-pointer",
+    []
+  );
 
   const BackButtonChildComponent = () => {
     return (
@@ -52,3 +56,5 @@ export default function BackBtn({ url }: BackBtnProps) {
     </div>
   );
 }
+
+export default memo(BackBtn);

@@ -3,11 +3,14 @@
 import { SERVICES } from "@/constants/services";
 import { motion } from "framer-motion";
 import ServiceDetailCard from "../card/servicesDetailCard";
+import { memo, useMemo } from "react";
 
-export default function ServicesPage() {
+function ServicesPage() {
+  const datas = useMemo(() => SERVICES, []);
+
   return (
     <section className="grid gap-5 pt-2 sm:grid-cols-2">
-      {SERVICES.map((el, idx) => (
+      {datas.map((el, idx) => (
         <motion.div
           key={el.title}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -20,3 +23,5 @@ export default function ServicesPage() {
     </section>
   );
 }
+
+export default memo(ServicesPage);

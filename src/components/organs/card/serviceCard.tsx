@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import useMounted from "@/hooks/useMounted";
@@ -12,7 +12,7 @@ export interface ServiceCardProps {
   desc: string;
 }
 
-export default function ServiceCard({ tag, title, desc }: ServiceCardProps) {
+function ServiceCard({ tag, title, desc }: ServiceCardProps) {
   const [hover, setHover] = useState<boolean>(false);
   const mount = useMounted();
 
@@ -73,3 +73,5 @@ export default function ServiceCard({ tag, title, desc }: ServiceCardProps) {
     </Link>
   );
 }
+
+export default memo(ServiceCard);

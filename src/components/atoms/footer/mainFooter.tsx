@@ -1,4 +1,6 @@
-export default function MainFooter() {
+import { memo } from "react";
+
+function MainFooter() {
   return (
     <footer className="w-full h-[5%] m-1 bottom-0 relative">
       <h1
@@ -10,3 +12,5 @@ export default function MainFooter() {
     </footer>
   );
 }
+
+export default memo(MainFooter);

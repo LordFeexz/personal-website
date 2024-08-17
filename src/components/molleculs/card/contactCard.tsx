@@ -2,7 +2,7 @@
 
 import { sendDataLayer } from "@/libs/googleTagManager";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { memo, useCallback, type ReactNode } from "react";
 import clsxm from "@/libs/clsxm";
 
 export interface ContactCardProps {
@@ -12,21 +12,16 @@ export interface ContactCardProps {
   backgroundColor: string;
 }
 
-export default function ContactCard({
-  title,
-  href,
-  icon,
-  backgroundColor,
-}: ContactCardProps) {
+function ContactCard({ title, href, icon, backgroundColor }: ContactCardProps) {
   const pathname = usePathname();
-  const handleCardClick = () => {
+  const handleCardClick = useCallback(() => {
     sendDataLayer({
       event: "contact_clicked",
       contact_title: title,
       page_path: pathname,
     });
     window.open(href, "_blank");
-  };
+  }, [href, pathname, title]);
 
   return (
     <button
@@ -41,3 +36,5 @@ export default function ContactCard({
     </button>
   );
 }
+
+export default memo(ContactCard);

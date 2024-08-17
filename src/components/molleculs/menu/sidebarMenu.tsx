@@ -1,3 +1,4 @@
+import { memo } from "react";
 import MenuItem, { type MenuItemProps } from "./menuItem";
 
 export interface SidebarMenuProps {
@@ -5,7 +6,7 @@ export interface SidebarMenuProps {
   lists: MenuItemProps[];
 }
 
-export default function SidebarMenu({ title, lists }: SidebarMenuProps) {
+function SidebarMenu({ title, lists }: SidebarMenuProps) {
   return (
     <nav className="flex flex-col space-y-1 lg:p-0">
       {title && (
@@ -19,3 +20,5 @@ export default function SidebarMenu({ title, lists }: SidebarMenuProps) {
     </nav>
   );
 }
+
+export default memo(SidebarMenu);

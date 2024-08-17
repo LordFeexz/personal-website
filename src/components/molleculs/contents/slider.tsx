@@ -1,6 +1,7 @@
 import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
 import type { StaticImageData } from "next/image";
 import Link from "next/link";
+import { memo } from "react";
 
 export interface SliderImgs {
   url: string | StaticImageData;
@@ -15,13 +16,7 @@ export interface SliderProps {
   slug: string;
 }
 
-export default function Slider({
-  imgs,
-  width,
-  height,
-  className,
-  slug,
-}: SliderProps) {
+function Slider({ imgs, width, height, className, slug }: SliderProps) {
   return (
     <section className={`relative ${className}`}>
       <nav className="relative z-0 mx-[2px] grid snap-x grid-flow-col overflow-y-hidden pl-5 sm:pl-10 lg:pl-16 hide-scrollbar">
@@ -46,3 +41,5 @@ export default function Slider({
     </section>
   );
 }
+
+export default memo(Slider);

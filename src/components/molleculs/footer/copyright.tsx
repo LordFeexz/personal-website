@@ -1,12 +1,13 @@
 import ME from "@/components/images/me2.jpg";
 import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { memo } from "react";
 
 export interface CopyrightProps {
   isHover: boolean;
 }
 
-export default function Copyright({ isHover }: CopyrightProps) {
+function Copyright({ isHover }: CopyrightProps) {
   return (
     <footer className="font-sora flex items-center gap-1 px-3 py-1 text-sm text-neutral-600 dark:text-neutral-400">
       {isHover ? (
@@ -29,3 +30,5 @@ export default function Copyright({ isHover }: CopyrightProps) {
     </footer>
   );
 }
+
+export default memo(Copyright);

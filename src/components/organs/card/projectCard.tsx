@@ -4,6 +4,7 @@ import BasicTooltip from "@/components/atoms/tooltip/basic";
 import type { StaticImageData } from "next/image";
 import { TECHSTACKS } from "@/constants/stacks";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { memo } from "react";
 
 export interface ProjectCardProps {
   title: string;
@@ -14,7 +15,7 @@ export interface ProjectCardProps {
   featured?: boolean;
 }
 
-export default function ProjectCard({
+function ProjectCard({
   title,
   slug,
   stacks,
@@ -62,3 +63,5 @@ export default function ProjectCard({
     </CardContainer>
   );
 }
+
+export default memo(ProjectCard);

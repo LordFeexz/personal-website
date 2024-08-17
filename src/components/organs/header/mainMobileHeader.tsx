@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
 import useMobile from "@/hooks/useMobile";
 import useMenu from "@/hooks/useMenu";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import MeJpg from "@/components/images/me.jpeg";
 import BasicTooltip from "@/components/atoms/tooltip/basic";
 import { VerifiedIcon } from "@/components/atoms/icons/react-icons-md";
@@ -14,7 +14,7 @@ import ThemeToggleBtn from "@/components/atoms/button/toggleThemeBtn";
 import MobileMenuButton from "@/components/molleculs/button/mobileMenuBtn";
 import MobileSidebarMenu from "@/components/molleculs/menu/mobileSidebarMenu";
 
-export default function MobileHeader() {
+function MobileHeader() {
   const isMobile = useMobile();
   const { isOpen, toggleMenu } = useMenu();
   const imgSize = isMobile ? 40 : 100;
@@ -78,3 +78,5 @@ export default function MobileHeader() {
     </section>
   );
 }
+
+export default memo(MobileHeader);

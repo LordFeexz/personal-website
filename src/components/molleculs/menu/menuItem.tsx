@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { memo, useCallback, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { BsArrowRightShort } from "@/components/atoms/icons/react-icons-bs";
 import useMenu from "@/hooks/useMenu";
@@ -15,7 +15,7 @@ export interface MenuItemProps {
   isHover?: boolean;
 }
 
-export default function MenuItem({
+function MenuItem({
   title,
   href,
   icon,
@@ -27,19 +27,22 @@ export default function MenuItem({
   const [isHovered, setIsHovered] = useState(false);
   const { hideMenu } = useMenu();
 
-  const onClickHandler = () => {
+  const onClickHandler = useCallback(() => {
     hideMenu();
     if (typeof onClick === "function") onClick();
-  };
+  }, [hideMenu, onClick]);
 
-  const handler = {
-    onMouseEnter: () => {
-      setIsHovered(true);
-    },
-    onMouseLeave: () => {
-      setIsHovered(false);
-    },
-  };
+  const handler = useMemo(
+    () => ({
+      onMouseEnter: () => {
+        setIsHovered(true);
+      },
+      onMouseLeave: () => {
+        setIsHovered(false);
+      },
+    }),
+    [setIsHovered]
+  );
 
   return (
     <Link
@@ -72,3 +75,5 @@ export default function MenuItem({
     </Link>
   );
 }
+
+export default memo(MenuItem);

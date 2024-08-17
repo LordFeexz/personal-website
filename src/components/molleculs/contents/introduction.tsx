@@ -1,6 +1,7 @@
 import TypographAnimation from "@/components/atoms/typography/typograph-animation";
+import { memo } from "react";
 
-export default function Introduction() {
+function Introduction() {
   return (
     <section className="space-y-2 bg-cover bg-no-repeat">
       <header className="flex items-center justify-between">
@@ -30,3 +31,5 @@ export default function Introduction() {
     </section>
   );
 }
+
+export default memo(Introduction);

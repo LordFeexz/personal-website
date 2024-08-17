@@ -2,7 +2,7 @@
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 import Image from "next/image";
 import { encode } from "qss";
-import React from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   AnimatePresence,
   motion,
@@ -54,11 +54,11 @@ export const LinkPreview = ({
     src = imageSrc;
   }
 
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const [isMounted, setIsMounted] = React.useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsMounted(true);
   }, []);
 
@@ -67,12 +67,15 @@ export const LinkPreview = ({
 
   const translateX = useSpring(x, springConfig);
 
-  const handleMouseMove = (event: any) => {
-    const targetRect = event.target.getBoundingClientRect();
-    const eventOffsetX = event.clientX - targetRect.left;
-    const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2; // Reduce the effect to make it subtle
-    x.set(offsetFromCenter);
-  };
+  const handleMouseMove = useCallback(
+    (event: any) => {
+      const targetRect = event.target.getBoundingClientRect();
+      const eventOffsetX = event.clientX - targetRect.left;
+      const offsetFromCenter = (eventOffsetX - targetRect.width / 2) / 2;
+      x.set(offsetFromCenter);
+    },
+    [x]
+  );
 
   return (
     <>
@@ -95,7 +98,7 @@ export const LinkPreview = ({
         openDelay={50}
         closeDelay={100}
         onOpenChange={(open) => {
-          setOpen(open);
+          setIsOpen(open);
         }}
       >
         <HoverCardPrimitive.Trigger
@@ -127,14 +130,14 @@ export const LinkPreview = ({
                   },
                 }}
                 exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="shadow-xl rounded-xl z-50"
+                className="shadow-xl rounded-xl !z-50"
                 style={{
                   x: translateX,
                 }}
               >
                 <Link
                   href={url}
-                  className="block p-1 bg-white z-50 border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
+                  className="block p-1 bg-white !z-50 border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
                   style={{ fontSize: 0 }}
                   target="_blank"
                 >
@@ -145,7 +148,7 @@ export const LinkPreview = ({
                     quality={quality}
                     layout={layout}
                     priority={true}
-                    className="rounded-lg z-50"
+                    className="rounded-lg !z-50"
                     alt="preview image"
                   />
                 </Link>

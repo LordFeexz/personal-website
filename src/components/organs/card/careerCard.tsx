@@ -10,6 +10,7 @@ import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
 import { sendDataLayer } from "@/libs/googleTagManager";
 import clsxm from "@/libs/clsxm";
 import type { StaticImageData } from "next/image";
+import { memo, useCallback, useMemo } from "react";
 
 export interface CareerCardProps {
   position: string;
@@ -21,7 +22,7 @@ export interface CareerCardProps {
   slug?: string;
 }
 
-export default function CareerCard({
+function CareerCard({
   position,
   company,
   location,
@@ -34,11 +35,20 @@ export default function CareerCard({
   const { resolvedTheme } = useTheme();
   const mount = useMounted();
 
-  const start_date = new Date(startDate);
-  const end_date = endDate ? new Date(endDate) : new Date();
+  const start_date = useMemo(() => new Date(startDate), [startDate]);
+  const end_date = useMemo(
+    () => (endDate ? new Date(endDate) : new Date()),
+    [endDate]
+  );
 
-  const durationYears = differenceInYears(end_date, start_date);
-  const durationMonths = differenceInMonths(end_date, start_date) % 12;
+  const durationYears = useMemo(
+    () => differenceInYears(end_date, start_date),
+    [end_date, start_date]
+  );
+  const durationMonths = useMemo(
+    () => differenceInMonths(end_date, start_date) % 12,
+    [end_date, start_date]
+  );
 
   let durationText = "";
   if (durationYears > 0) {
@@ -48,7 +58,7 @@ export default function CareerCard({
     durationText += `${durationMonths} Month${durationMonths > 1 ? "s" : ""}`;
   }
 
-  const handleCardClick = () => {
+  const handleCardClick = useCallback(() => {
     sendDataLayer({
       event: "career_clicked",
       career_position: position,
@@ -56,7 +66,7 @@ export default function CareerCard({
       career_duration: durationText,
     });
     router.push(`/experience/${slug}`);
-  };
+  }, [company, durationText, position, router, slug]);
 
   return mount ? (
     <BasicCard
@@ -113,3 +123,5 @@ export default function CareerCard({
     </BasicCard>
   ) : null;
 }
+
+export default memo(CareerCard);

@@ -1,6 +1,13 @@
 "use client";
 
-import { useState, useEffect, type ChangeEvent, Suspense } from "react";
+import {
+  useState,
+  useEffect,
+  type ChangeEvent,
+  Suspense,
+  memo,
+  useCallback,
+} from "react";
 import { useSearchParams } from "next/navigation";
 import { useFormStatus } from "react-dom";
 import { swalError, swalSuccess } from "@/libs/swal";
@@ -14,7 +21,7 @@ export interface ContactFormProps {
   message: string;
 }
 
-export default function ContactForm() {
+function ContactForm() {
   const { pending } = useFormStatus();
   const params = useSearchParams();
   const searchParams = new URLSearchParams(params.toString());
@@ -44,16 +51,17 @@ export default function ContactForm() {
     }
   }, [error, params, success]);
 
-  const onChangeHandler = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
+  const onChangeHandler = useCallback(
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
 
-    setData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+      setData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    },
+    []
+  );
 
   const disabledCond = pending || !data.email || !data.name || !data.message;
 
@@ -105,16 +113,20 @@ export default function ContactForm() {
   );
 }
 
-const LabelInputContainer = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div className={cn("flex flex-col space-y-2 w-full", className)}>
-      {children}
-    </div>
-  );
-};
+const LabelInputContainer = memo(
+  ({
+    children,
+    className,
+  }: {
+    children: React.ReactNode;
+    className?: string;
+  }) => {
+    return (
+      <div className={cn("flex flex-col space-y-2 w-full", className)}>
+        {children}
+      </div>
+    );
+  }
+);
+
+export default memo(ContactForm);

@@ -1,5 +1,11 @@
 import clsx from "clsx";
-import type { Dispatch, SetStateAction } from "react";
+import {
+  type Dispatch,
+  memo,
+  type SetStateAction,
+  useCallback,
+  useMemo,
+} from "react";
 import styled from "@emotion/styled";
 import { GiHamburgerMenu } from "@/components/atoms/icons/react-icons-gi";
 import { MdMenuOpen } from "@/components/atoms/icons/react-icons-md";
@@ -30,13 +36,10 @@ export interface MobileMenuButtonProps {
   setExpand: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function MobileMenuButton({
-  expand,
-  setExpand,
-}: MobileMenuButtonProps) {
-  const toggle = () => setExpand(!expand);
+function MobileMenuButton({ expand, setExpand }: MobileMenuButtonProps) {
+  const toggle = useCallback(() => setExpand(!expand), [setExpand, expand]);
 
-  const menu = [{ index: 1 }, { index: 2 }, { index: 3 }];
+  const menu = useMemo(() => [{ index: 1 }, { index: 2 }, { index: 3 }], []);
 
   return !expand ? (
     <GiHamburgerMenu
@@ -60,3 +63,5 @@ export default function MobileMenuButton({
     </MdMenuOpen>
   );
 }
+
+export default memo(MobileMenuButton);

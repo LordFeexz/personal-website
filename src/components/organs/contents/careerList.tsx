@@ -3,12 +3,13 @@ import CareerCard, { type CareerCardProps } from "../card/careerCard";
 import { HiOutlineBriefcase } from "@/components/atoms/icons/react-icons-hi";
 import SubSectionHeading from "@/components/atoms/header/subSectionHeading";
 import ResumeBtn from "@/components/molleculs/button/resumeBtn";
+import { memo } from "react";
 
 export interface CareerListProps {
   careers: CareerCardProps[];
 }
 
-export default function CareerList({ careers }: CareerListProps) {
+function CareerList({ careers }: CareerListProps) {
   return (
     <section className="space-y-6">
       <header className="space-y-2">
@@ -28,3 +29,5 @@ export default function CareerList({ careers }: CareerListProps) {
     </section>
   );
 }
+
+export default memo(CareerList);

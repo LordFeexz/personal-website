@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import Breakline from "@/components/atoms/contents/breakLine";
 import { SIDEBAR_MENU } from "@/constants/sidebar";
 import SidebarMenu from "./sidebarMenu";
+import { memo } from "react";
 
-export default function MobileSidebarMenu() {
+function MobileSidebarMenu() {
   return (
     <motion.nav
       className="my-3 flex h-screen flex-col"
@@ -16,3 +17,5 @@ export default function MobileSidebarMenu() {
     </motion.nav>
   );
 }
+
+export default memo(MobileSidebarMenu);

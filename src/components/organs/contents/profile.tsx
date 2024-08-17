@@ -5,12 +5,12 @@ import { AnimatePresence } from "framer-motion";
 import useMobile from "@/hooks/useMobile";
 import useMenu from "@/hooks/useMenu";
 import ThemeToggleBtn from "@/components/atoms/button/toggleThemeBtn";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import ProfileHeader from "@/components/molleculs/contents/profileHeader";
 import MobileMenuButton from "@/components/molleculs/button/mobileMenuBtn";
 import MobileSidebarMenu from "@/components/molleculs/menu/mobileSidebarMenu";
 
-export default function Profile() {
+function Profile() {
   const { isOpen, toggleMenu } = useMenu();
   const isMobile = useMobile();
 
@@ -50,3 +50,5 @@ export default function Profile() {
     </header>
   );
 }
+
+export default memo(Profile);

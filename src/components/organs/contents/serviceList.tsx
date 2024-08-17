@@ -3,8 +3,9 @@ import ServiceCard from "@/components/organs/card/serviceCard";
 import { FaServicestack } from "@/components/atoms/icons/react-icons-fa";
 import SubSectionHeading from "@/components/atoms/header/subSectionHeading";
 import { SERVICES } from "@/constants/services";
+import { memo } from "react";
 
-export default function ServicesList() {
+function ServicesList() {
   return (
     <section>
       <header className="space-y-2">
@@ -26,3 +27,5 @@ export default function ServicesList() {
     </section>
   );
 }
+
+export default memo(ServicesList);
