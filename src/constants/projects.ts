@@ -175,7 +175,7 @@ export const PROJECTS: MyProjects[] = [
     slug: "serene-apps",
     desc: "is an application that measures your mental health. It has tools for relaxing, mental health testing, and more.",
     thumbnail: SERENE,
-    stacks: ["golang", "react"],
+    stacks: ["golang", "react", "postgres"],
     imgs: [
       {
         url: SERENE,
