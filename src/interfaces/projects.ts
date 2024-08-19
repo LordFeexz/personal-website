@@ -7,7 +7,7 @@ export interface MyProjects {
   stacks: string[];
   featured?: boolean;
   imgs: MyProjectsImg[];
-  repo: string;
+  repo?: string;
   thumbnail: string | StaticImageData;
   live?: string;
 }

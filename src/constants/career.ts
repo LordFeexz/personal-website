@@ -1,6 +1,7 @@
 import IndofundPNG from "@/components/images/Indofund-b.webp";
 import FGJPG from "@/components/images/FgLogo.jpg";
 import BalkanDreamPNG from "@/components/images/Balkan-Dreams-Logo.png";
+import Dealls from "@/components/images/dealls.png";
 
 export const CAREER = [
   {
@@ -9,7 +10,6 @@ export const CAREER = [
     logo: FGJPG,
     location: "Remote/Indonesia",
     startDate: new Date("12-20-2022"),
-    endDate: new Date("07-11-2024"),
     slug: "Forum-Gamers",
     responsibility: [
       "Initiate and setup all projects",
@@ -53,5 +53,23 @@ export const CAREER = [
     slug: "Balkan-Dreams",
     responsibility: [],
     endDate: new Date("06-28-2024"),
+  },
+  {
+    position: "EduMentor",
+    company: "Dealls",
+    logo: Dealls,
+    location: "Remote/Indonesia",
+    startDate: new Date("07-08-2024"),
+    slug: "Dealls",
+    responsibility: [
+      "Encourage and motivate the mentee to stay committed to their goals, especially during challenging times",
+      "Assist the mentee in developing new skills and improving existing ones through targeted practice and resources.",
+      "Provide opportunities for the mentee to apply and refine their skills in real-world situations.",
+      "Help the mentee build self-confidence by acknowledging their achievements and encouraging them to take on new challenges.",
+      "Support the mentee in recognizing their own potential and strengths.",
+      "Share relevant resources, tools, and connections that can aid the mentee’s development.",
+      "Help the mentee define clear, achievable goals and create a roadmap to reach them.",
+      "Offer personalized strategies and resources to help the mentee achieve their objectives.",
+    ],
   },
 ];

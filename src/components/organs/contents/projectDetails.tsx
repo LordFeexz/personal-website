@@ -6,11 +6,10 @@ import Slider, {
 import { TECHSTACKS } from "@/constants/stacks";
 
 export interface ProjectDetails {
-  repo: string;
+  repo?: string;
   live?: string;
   imgs: SliderImgs[];
   stacks: string[];
-  featured?: boolean;
   slug: string;
 }
 
@@ -29,8 +28,8 @@ export default function ProjectDetail({
             Tech Stack :
           </span>
           <div className="flex flex-wrap items-center gap-3">
-            {stacks?.map((stack: string, index: number) => (
-              <div key={index}>
+            {stacks?.map((stack: string) => (
+              <div key={stack}>
                 <BasicTooltip title={stack}>
                   <div className="w-5">{TECHSTACKS[stack]}</div>
                 </BasicTooltip>

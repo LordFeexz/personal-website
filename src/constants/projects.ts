@@ -11,6 +11,11 @@ import FACERECOGNITION from "@/components/images/face-recognition.jpg";
 import FREXAMPLE1 from "@/components/images/face-recognition-example1.png";
 import FREXAMPLE2 from "@/components/images/face-recognition-example2.png";
 import MUKTACHAIN from "@/components/images/blockchain.png";
+import SERENE from "@/components/images/Serene.jpeg";
+import SERENETHERAPY from "@/components/images/serene-therapy.png";
+import SERENEACTIVITY from "@/components/images/serene-activity.jpeg";
+import SERENEHOSPITAL from "@/components/images/serene-nearby-clinic.png";
+import SERENEMOODS from "@/components/images/serene-moods.png";
 import type { MyProjects } from "@/interfaces/projects";
 
 export const PROJECTS: MyProjects[] = [
@@ -164,5 +169,40 @@ export const PROJECTS: MyProjects[] = [
       },
     ],
     stacks: ["python"],
+  },
+  {
+    title: "Serene Apps",
+    slug: "serene-apps",
+    desc: "is an application that measures your mental health. It has tools for relaxing, mental health testing, and more.",
+    thumbnail: SERENE,
+    stacks: ["golang", "react"],
+    imgs: [
+      {
+        url: SERENE,
+        alt: "serene-apps",
+        desc: "serene apps logo image",
+      },
+      {
+        url: SERENEACTIVITY,
+        alt: "serene-activity",
+        desc: "serene apps activity page image",
+      },
+      {
+        url: SERENEHOSPITAL,
+        alt: "serene-hospital",
+        desc: "serene apps search nearby clinic page image",
+      },
+      {
+        url: SERENEMOODS,
+        alt: "serene-moods",
+        desc: "serene apps moods page image",
+      },
+      {
+        url: SERENETHERAPY,
+        alt: "serene-therapy",
+        desc: "serene apps therapy page image",
+      },
+    ],
+    live: "https://expo.dev/artifacts/eas/hER6s1SHkg2daxSpNUFc6s.apk",
   },
 ];
