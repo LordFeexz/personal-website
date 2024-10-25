@@ -104,16 +104,18 @@ function ChangeLang({ className }: ChangeLangProps) {
   );
 
   return (
-    <div className={cn(className, "space-x-2")}>
+    <div className={cn(className, "md:space-x-2 space-y-2")}>
       <Button
         variant={activeLang === "en" ? "default" : "outline"}
         onClick={handleLangChange("en")}
+        className="min-w-32"
       >
         English
       </Button>
       <Button
         variant={activeLang === "id" ? "default" : "outline"}
         onClick={handleLangChange("id")}
+        className="min-w-32"
       >
         Indonesian
       </Button>
