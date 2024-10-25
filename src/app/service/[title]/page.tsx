@@ -34,7 +34,7 @@ export default function Page({
       <Meteors number={20} />
       <BackBtn />
       <PageHeading title={data.title.replaceAll("-", " ")} desc={data.desc} />
-      <div className="flex justify-center items-center snap-center py-10 pr-5">
+      <figure className="flex justify-center items-center snap-center py-10 pr-5">
         <Image
           priority
           className="transition-all rounded-3xl duration-300 hover:scale-105 object-cover object-center"
@@ -43,7 +43,7 @@ export default function Page({
           width={400}
           height={200}
         />
-      </div>
+      </figure>
       <Breakline className="sm:pr-11" />
       <section className="mt-5 space-y-6 leading-[1.8] dark:text-neutral-300">
         <UseMdxComponent>{mdFile.content as any}</UseMdxComponent>

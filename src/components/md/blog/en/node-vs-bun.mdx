@@ -1,0 +1,19 @@
+Node.js and Bun.js are JavaScript runtimes that can be used to build server-side applications. Node.js has long been the industry standard and has a very mature ecosystem, while Bun.js is a newcomer that includes many built-in tools, such as a runtime, package manager, and testing tools.
+
+- [Node.js](https://nodejs.org/en)
+- [Bun.js](https://bun.sh/docs)
+
+I created a simple test like this to measure their speed when running the following code:
+
+![Code Test](/images/blog/PROBLEMS.png?weight=400&height=200)
+
+The results were not much different.
+
+However, it's important to note that Bun.js is multi-threaded, while Node.js is single-threaded.
+
+Sources:
+
+- [Node.js vs Bun: Which one is right for you?](https://medium.com/@pratikdhamepawar/node-js-vs-bun-which-one-is-right-for-you-ec7138250cc2#:~:text=js%3A%20focuses%20on%20blazing%2Dfast,but%20still%20trails%20behind%20npm)
+- [Bun's multi-threaded bundler](https://bun.sh/docs/bundler/macros#:~:text=Bun's%20bundler%20is%20multi%2Dthreaded,multiple%20spawned%20JavaScript%20%22workers%22)
+
+This means that if code like the one above runs in Node.js, it will block all other processes. Although this can be mitigated by wrapping the above condition with a Promise.

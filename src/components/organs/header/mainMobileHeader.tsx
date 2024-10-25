@@ -13,9 +13,11 @@ import { VerifiedIcon } from "@/components/atoms/icons/react-icons-md";
 import ThemeToggleBtn from "@/components/atoms/button/toggleThemeBtn";
 import MobileMenuButton from "@/components/molleculs/button/mobileMenuBtn";
 import MobileSidebarMenu from "@/components/molleculs/menu/mobileSidebarMenu";
+import useMounted from "@/hooks/useMounted";
 
 function MobileHeader() {
   const isMobile = useMobile();
+  const mounted = useMounted();
   const { isOpen, toggleMenu } = useMenu();
   const imgSize = isMobile ? 40 : 100;
 
@@ -26,6 +28,8 @@ function MobileHeader() {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
+
+  if (!mounted) return null;
 
   return (
     <section className="flex flex-col rounded-b-md px-4 py-4 shadow-sm lg:hidden">

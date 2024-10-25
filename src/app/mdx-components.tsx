@@ -5,6 +5,8 @@ import remarkGfm from "remark-gfm";
 import CodeBlockViews from "@/components/organs/views/codeBlockViews";
 import type { ChildrenProps } from "@/interfaces";
 import type { MDXComponents } from "mdx/types";
+import Link from "next/link";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 const Table = ({ children }: ChildrenProps) => (
   <div className="table-container">
@@ -17,13 +19,19 @@ export default function UseMdxComponent({ children }: MDXComponents) {
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        a: (props) => (
-          <a
-            className="cursor-pointer text-teal-600 hover:text-teal-400 hover:underline"
-            target="_blank"
-            {...props}
-          />
-        ),
+        a: (props) =>
+          props.href && props.href.includes("http") ? (
+            <LinkPreview url={props.href as string} {...props}>
+              {props.children}
+            </LinkPreview>
+          ) : (
+            <Link
+              className="cursor-pointer text-teal-600 hover:text-teal-400 hover:underline"
+              target="_blank"
+              href={props.href as string}
+              {...props}
+            />
+          ),
         p: (props) => <p {...props} className="font-sans" />,
         h2: (props) => (
           <h2

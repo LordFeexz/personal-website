@@ -18,3 +18,5 @@ export type PageProps<
   params: params;
   searchParams?: searchParams;
 };
+
+export type Lang = "en" | "id";
