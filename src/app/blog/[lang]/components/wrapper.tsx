@@ -95,12 +95,13 @@ function ChangeLang({ className }: ChangeLangProps) {
 
   const handleLangChange = useCallback(
     (lang: Lang): MouseEventHandler =>
-      () => {
+      (e) => {
+        e.preventDefault();
         setActiveLang(lang);
         setPage(1);
         router.push("/blog/" + lang);
       },
-    []
+    [activeLang]
   );
 
   return (

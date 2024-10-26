@@ -5,6 +5,7 @@ import CONTROLFLOW from "@/components/images/control-flow.jpg";
 import NEXTJS from "@/components/images/nextjs.webp";
 import BUNVSNODE from "@/components/images/Bun-Node.png";
 import RANSOMWARE from "@/components/images/Ransomware.jpg";
+import REMIX from "@/components/images/remix.jpg";
 
 export interface BlogData {
   slug: string;
@@ -16,6 +17,13 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "chatgpt-use-remix") as MdxFiles,
+      image: REMIX,
+      name: "ChatGPT now use Remix JS instead of Next JS?",
+      slug: "chatgpt-use-remix-instead-of-next-js",
+      keywords: ["chatgpt", "remix", "next", "migrate"],
+    },
     {
       file: loadBlogMdx("en", "control-flow") as MdxFiles,
       slug: "control-flow-in-programming",
@@ -63,6 +71,13 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "chatgpt-pakai-remix") as MdxFiles,
+      image: REMIX,
+      name: "ChatGPT sekarang pakai Remix JS daripada Next JS?",
+      slug: "chatgpt-sekarang-pakai-remix-daripada-next",
+      keywords: ["chatgpt", "remix", "next", "migrasi"],
+    },
     {
       file: loadBlogMdx("id", "kontrol-alur") as MdxFiles,
       slug: "mengatur-flow-dalam-pemprograman",

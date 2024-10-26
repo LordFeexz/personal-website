@@ -1,0 +1,31 @@
+# ChatGPT Pindah ke Remix?
+
+Ada yang sadar nggak, sih? Sekarang ChatGPT sudah tidak lagi menggunakan [Next.js](https://nextjs.org/) melainkan telah beralih ke [Remix](https://remix.run/).
+
+Kalau nggak percaya, kalian bisa coba **inspect element**,
+lalu buka **console**, dan ketik `window.`.
+Kalian akan melihat suggestion seperti ini:
+
+![Contoh Console Output](/images/blog/chatgpt-use-remix.png)
+
+### Mengapa Beralih ke Remix?
+
+Ketika saya tanya langsung ke ChatGPT, dia menjawab begini:
+
+![Jawaban ChatGPT](/images/blog/kenapa-chat-gpt-migrasi.png)
+
+> “sepertinya [Remix](https://remix.run/) dipilih karena mengutamakan **user experience** yang lebih baik.”
+
+Tampaknya, alasan utama ChatGPT beralih dari Next.js ke Remix adalah demi pengalaman pengguna yang lebih optimal.
+Remix dikenal lebih unggul dalam hal **Server Side Rendering (SSR)** yang efektif,
+sehingga aplikasi ini bisa meminimalkan penggunaan **loading state** di sisi klien.
+
+### Apa Kelebihan Remix?
+
+Remix juga dirancang untuk mengurangi jumlah **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** di sisi klien sebanyak mungkin,
+dan lebih memilih untuk memanfaatkan **API Web** standar seperti **[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)** dan **[FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)**
+agar aplikasi menjadi lebih ringan serta memaksimalkan potensi browser modern.
+
+---
+
+Kalau kamu, pilih tim **[Next.js](https://nextjs.org/)** atau jadi pengen coba belajar **[Remix](https://remix.run/)**?

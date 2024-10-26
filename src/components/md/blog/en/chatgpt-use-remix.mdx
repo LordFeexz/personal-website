@@ -1,0 +1,32 @@
+# ChatGPT Migrated to Remix?
+
+Is anyone aware that ChatGPT doesn't use [Next.js](https://nextjs.org/) anymore?
+It’s now using [Remix](https://remix.run/) instead.
+
+If you don't believe me, try using **inspect element** and opening the **console**.
+Type `window.`
+and you'll see suggestions like this:
+
+![Example Console Output](/images/blog/chatgpt-use-remix.png)
+
+### Why Did ChatGPT Migrate from Next.js to Remix?
+
+When I asked ChatGPT directly, it explained:
+
+![ChatGPT Answer](/images/blog/why-chatgpt-use-remix.png)
+
+> “It's seems [Remix](https://remix.run/) was chosen for an improved **user experience**.”
+
+It appears that ChatGPT's decision to migrate from Next.js to Remix centers on creating a better user experience.
+Remix is known for its effective **server-side rendering (SSR)**,
+reducing the need for **loading states** on the client side.
+
+### What Makes Remix Special?
+
+Remix is designed to minimize the amount of **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)** on the client,
+leaning more heavily on **standard web APIs** like the **[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)** and **[FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)**.
+This approach helps make the application lighter and optimizes modern browser performance.
+
+---
+
+What about you? Are you on the **[Next.js](https://nextjs.org/)** team, or thinking of diving into **[Remix](https://remix.run/)**?
