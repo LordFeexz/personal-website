@@ -32,7 +32,6 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
         "functional",
         "functional-programming",
         "purely-functional-programming",
-        "purely-functional-programming",
       ],
     },
     {
@@ -102,7 +101,6 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
         "purely-functional",
         "functional",
         "functional-programming",
-        "purely-functional-programming",
         "purely-functional-programming",
       ],
     },

@@ -11,6 +11,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import type { BlogData } from "@/constants/blog";
+import useMounted from "@/hooks/useMounted";
 import type { ChildrenProps, Lang } from "@/interfaces";
 import { cn } from "@/libs/utils";
 import { useParams, useRouter } from "next/navigation";
@@ -24,7 +25,6 @@ import {
   type SetStateAction,
   useContext,
   useMemo,
-  memo,
 } from "react";
 
 export const ITEMS_PER_PAGE = 10;
@@ -65,8 +65,11 @@ function Wrapper({ children, data }: WrapperProps) {
   );
 
   useEffect(() => {
-    if (params && params?.lang && !["en", "id"].includes(params.lang as string))
-      router.replace("/" + activeLang);
+    if (params?.lang && ["en", "id"].includes(params.lang as Lang)) {
+      setActiveLang(params.lang as Lang);
+    } else {
+      router.replace("/" + activeLang, { scroll: false });
+    }
   }, [params]);
 
   return (
@@ -91,12 +94,12 @@ export interface ChangeLangProps {
 
 function ChangeLang({ className }: ChangeLangProps) {
   const router = useRouter();
+  const mount = useMounted();
   const { setActiveLang, activeLang, setPage } = useContext(BlogPageContext);
 
   const handleLangChange = useCallback(
     (lang: Lang): MouseEventHandler =>
       (e) => {
-        e.preventDefault();
         setActiveLang(lang);
         setPage(1);
         router.push("/blog/" + lang);
@@ -104,7 +107,7 @@ function ChangeLang({ className }: ChangeLangProps) {
     [activeLang]
   );
 
-  return (
+  return mount ? (
     <div className={cn(className, "md:space-x-2 space-y-2")}>
       <Button
         variant={activeLang === "en" ? "default" : "outline"}
@@ -121,7 +124,7 @@ function ChangeLang({ className }: ChangeLangProps) {
         Indonesian
       </Button>
     </div>
-  );
+  ) : null;
 }
 
 function BlogList() {
@@ -202,6 +205,4 @@ function BlogPagination() {
   );
 }
 
-export { ChangeLang, BlogList, BlogPagination };
-
-export default memo(Wrapper);
+export { ChangeLang, BlogList, BlogPagination, Wrapper };
