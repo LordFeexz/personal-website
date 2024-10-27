@@ -6,6 +6,7 @@ import NEXTJS from "@/components/images/nextjs.webp";
 import BUNVSNODE from "@/components/images/Bun-Node.png";
 import RANSOMWARE from "@/components/images/Ransomware.jpg";
 import REMIX from "@/components/images/remix.jpg";
+import PUREFUNCTION from "@/components/images/pure-function.png";
 
 export interface BlogData {
   slug: string;
@@ -17,6 +18,23 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "pure-function") as MdxFiles,
+      image: PUREFUNCTION,
+      name: "Pure Function",
+      slug: "pure-function",
+      keywords: [
+        "pure",
+        "function",
+        "immutable",
+        "purely",
+        "purely-functional",
+        "functional",
+        "functional-programming",
+        "purely-functional-programming",
+        "purely-functional-programming",
+      ],
+    },
     {
       file: loadBlogMdx("en", "chatgpt-use-remix") as MdxFiles,
       image: REMIX,
@@ -71,6 +89,23 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "pure-function") as MdxFiles,
+      image: PUREFUNCTION,
+      name: "Pure Function",
+      slug: "pure-function",
+      keywords: [
+        "pure",
+        "function",
+        "immutable",
+        "purely",
+        "purely-functional",
+        "functional",
+        "functional-programming",
+        "purely-functional-programming",
+        "purely-functional-programming",
+      ],
+    },
     {
       file: loadBlogMdx("id", "chatgpt-pakai-remix") as MdxFiles,
       image: REMIX,
