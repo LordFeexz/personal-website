@@ -1,0 +1,50 @@
+# [Axios](https://axios-http.com/docs/intro) vs [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API): Mana yang Lebih Cocok untuk HTTP Request di JavaScript?
+
+Dalam pengembangan aplikasi JavaScript, menangani HTTP request adalah aspek yang sangat penting, dan **[Axios](https://axios-http.com/docs/intro)** serta **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)** merupakan dua metode populer yang bisa digunakan. Berikut adalah penjelasan tentang masing-masing metode, kelebihan dan kekurangannya, serta tips untuk memilih yang sesuai dengan kebutuhan proyek.
+
+## 🔹 Apa itu Fetch?
+
+![Fetch](/images/blog/fetch.png)
+
+**[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)** adalah API bawaan JavaScript yang diperkenalkan pada versi ES6 ke atas. Fetch memungkinkan frontend untuk membuat HTTP request secara asynchronous tanpa perlu menginstal dependensi tambahan.
+[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) adalah metode standar yang didukung langsung oleh browser, menawarkan fleksibilitas dalam menangani berbagai jenis HTTP request.
+
+#### Kelebihan Fetch:
+
+- **API Standar**: Didukung langsung oleh browser, ideal untuk proyek yang ingin mengurangi dependensi.
+- **Fleksibel**: Mudah disesuaikan untuk menangani berbagai tipe request HTTP (GET, POST, dll).
+- **Ringan**: Tidak membutuhkan pustaka tambahan, sehingga ukuran proyek tetap minimal.
+
+#### Kekurangan Fetch:
+
+- **Penanganan Error**: [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) hanya gagal jika ada masalah jaringan, sehingga untuk menangani HTTP error, diperlukan kode tambahan (misalnya dengan memeriksa status response).
+- **Tidak Ada Timeout Bawaan**: [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) tidak memiliki dukungan timeout bawaan seperti [Axios](https://axios-http.com/docs/intro), jadi Anda perlu mengatur timeout secara manual.
+- **Parsing JSON Manual**: [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) tidak otomatis memparsing JSON; Anda perlu memanggil `.json()` pada objek response untuk mengakses data JSON.
+
+---
+
+## 🔹 Apa itu Axios?
+
+![Axios](/images/blog/axios.jpeg)
+
+**[Axios](https://axios-http.com/docs/intro)** adalah pustaka eksternal untuk melakukan HTTP request dengan berbagai fitur tambahan untuk menyederhanakan penanganan response dan error.
+[Axios](https://axios-http.com/docs/intro) adalah HTTP client yang kuat dengan kontrol lebih besar terhadap request dan manajemen error.
+
+#### Kelebihan Axios:
+
+- **Parsing JSON Otomatis**: Response otomatis diformat ke JSON, menghemat langkah tambahan dalam kode.
+- **Penanganan Error yang Lebih Baik**: [Axios](https://axios-http.com/docs/intro) memudahkan penanganan error HTTP maupun jaringan.
+- **Dukungan Timeout**: Dukungan timeout bawaan memudahkan Anda mengatur batas waktu respons tanpa kode tambahan.
+
+#### Kekurangan Axios:
+
+- **Dependensi Tambahan**: Dibandingkan dengan [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), [Axios](https://axios-http.com/docs/intro) membutuhkan instalasi pustaka (`npm install axios`), yang sedikit menambah ukuran proyek.
+- **Potensi Berlebihan untuk Proyek Sederhana**: Untuk proyek yang hanya membutuhkan request sederhana, Axios mungkin terlalu berlebihan.
+
+---
+
+## 💡 Mana yang Lebih Cocok?
+
+Untuk proyek kecil atau dengan kebutuhan request yang sederhana, **[Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)** mungkin sudah cukup. Namun, jika proyek Anda membutuhkan kontrol lebih, penanganan error yang efisien, atau fitur tambahan seperti timeout, **[Axios](https://axios-http.com/docs/intro)** adalah pilihan yang lebih baik.
+
+**Menurut Anda, mana yang paling sesuai?**

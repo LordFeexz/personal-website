@@ -7,6 +7,7 @@ import BUNVSNODE from "@/components/images/Bun-Node.png";
 import RANSOMWARE from "@/components/images/Ransomware.jpg";
 import REMIX from "@/components/images/remix.jpg";
 import PUREFUNCTION from "@/components/images/pure-function.png";
+import FETCHANDAXIOS from "@/components/images/fetch-vs-axios.jpg";
 
 export interface BlogData {
   slug: string;
@@ -18,6 +19,21 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "axios-fetch") as MdxFiles,
+      image: FETCHANDAXIOS,
+      name: "Axios vs Fetch",
+      slug: "axios-vs-fetch",
+      keywords: [
+        "axios",
+        "fetch",
+        "api",
+        "api-call",
+        "api-calls",
+        "api-requests",
+        "api-request",
+      ],
+    },
     {
       file: loadBlogMdx("en", "pure-function") as MdxFiles,
       image: PUREFUNCTION,
@@ -88,6 +104,21 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "axios-fetch") as MdxFiles,
+      image: FETCHANDAXIOS,
+      name: "Axios vs Fetch",
+      slug: "axios-vs-fetch",
+      keywords: [
+        "axios",
+        "fetch",
+        "api",
+        "api-call",
+        "api-calls",
+        "api-requests",
+        "api-request",
+      ],
+    },
     {
       file: loadBlogMdx("id", "pure-function") as MdxFiles,
       image: PUREFUNCTION,

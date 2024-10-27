@@ -19,6 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         imgs.map(({ alt }) => `${domain}/projects/${slug}/${alt}/sitemap.xml`)
       ).flat(),
       ...CAREER.map(({ slug }) => `${domain}/experience/${slug}/sitemap.xml`),
+      ...["en", "id"].map((lang) => `${domain}/${lang}/sitemap.xml`),
     ],
     host: domain,
   };
