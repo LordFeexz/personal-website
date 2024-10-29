@@ -1,0 +1,38 @@
+# 🚨 Using Status Code 200 for All Responses
+
+> “Just use status code 200; we’ll put the actual error code in the body so it doesn’t cause frontend errors.”
+
+Ever heard this statement? While it might seem practical, this approach is _**not recommended**_ as it can confuse clients. If you’re using logging tools like **[ELK](https://www.elastic.co/what-is/elk-stack)**, **[Datadog](https://www.datadoghq.com)**, and others, this method can make these tools less effective.
+
+## ⚠️ Drawbacks of Using Status Code 200 for All Responses
+
+Here are the disadvantages of this approach:
+
+- **📉 Inaccurate Log Data**:  
+  Monitoring systems might misinterpret issues as successes because every response has a 200 OK status.
+
+- **🔍 Difficult Troubleshooting**:  
+  Since every status is set to 200, developers have to read the response body to detect errors, which slows down troubleshooting.
+
+- **📊 Inaccurate Monitoring Dashboards**:  
+  This approach can misrepresent monitoring metrics, potentially hiding issues that should be detected, like a rise in 500 errors or invalid requests.
+
+- **🚫 Ineffective Automated Alerts**:  
+  Monitoring tools like [New Relic](https://newrelic.com/) or [AWS CloudWatch](https://aws.amazon.com/cloudwatch/) rely on status codes for automated alerts. By sending all responses with a 200 OK status, automatic alerts may not trigger correctly, allowing serious issues to go unnoticed.
+
+- **⚙️ Non-Standard HTTP Compliance**:  
+  This approach deviates from HTTP standards, making the application harder for teams and tools aligned with these standards to understand and manage.
+
+## 💡 Tips for Handling Client-Side Errors
+
+If you’re struggling to handle errors thrown by certain dependencies like [Axios](https://axios-http.com/docs/intro), consider adding the 'validateStatus' option to your Axios instance.
+
+![ValidateStatus Example](/images/blog/axios-options.png)
+
+The validateStatus function takes a single statusCode argument (status: number) and returns a boolean. If not specified, the default is:
+
+```js
+validateStatus: (s) => s < 400;
+```
+
+With this configuration, you can customize which statuses the client considers errors without changing the server's status codes.

@@ -8,6 +8,7 @@ import RANSOMWARE from "@/components/images/Ransomware.jpg";
 import REMIX from "@/components/images/remix.jpg";
 import PUREFUNCTION from "@/components/images/pure-function.png";
 import FETCHANDAXIOS from "@/components/images/fetch-vs-axios.jpg";
+import STATUS200 from "@/components/images/200.jpeg";
 
 export interface BlogData {
   slug: string;
@@ -19,6 +20,21 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "status-code-always-200") as MdxFiles,
+      image: STATUS200,
+      name: "status code always 200?",
+      slug: "status-code-always-200",
+      keywords: [
+        "status code",
+        "200",
+        "error code",
+        "error",
+        "http-status-code",
+        "error-handling",
+        "error-handling-in-node-js",
+      ],
+    },
     {
       file: loadBlogMdx("en", "axios-fetch") as MdxFiles,
       image: FETCHANDAXIOS,
@@ -104,6 +120,21 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "status-code-always-200") as MdxFiles,
+      image: STATUS200,
+      name: "status code selalu 200?",
+      slug: "status-code-selalu-200",
+      keywords: [
+        "status code",
+        "200",
+        "error code",
+        "error",
+        "http-status-code",
+        "error-handling",
+        "error-handling-in-node-js",
+      ],
+    },
     {
       file: loadBlogMdx("id", "axios-fetch") as MdxFiles,
       image: FETCHANDAXIOS,

@@ -1,0 +1,39 @@
+# 🚨 Menggunakan Status Code 200 untuk Semua Respons
+
+> "Status code-nya 200 aja, error code aslinya nanti kita tulis di body aja, biar nggak error di frontend."
+
+Pernah mendengar pernyataan seperti ini? Pendekatan ini mungkin terlihat praktis, tetapi sebenarnya _**tidak disarankan**_ karena bisa membingungkan client. Jika Anda menggunakan logging tools seperti
+**[ELK](https://www.elastic.co/what-is/elk-stack)**, **[Datadog](https://www.datadoghq.com)**, dan lainnya, pendekatan ini bisa menyebabkan tools tersebut tidak efektif.
+
+## ⚠️ Kerugian Menggunakan Status Code 200 untuk Semua Respons
+
+Berikut adalah kerugian dalam menggunakan pendekatan ini:
+
+- **📉 Data Log yang Tidak Akurat** :
+  Sistem monitoring mungkin salah mengidentifikasi masalah sebagai keberhasilan karena status code selalu 200 OK.
+
+- **🔍 Sulit untuk Troubleshooting** :
+  Karena semua status di-set sebagai 200, developer harus membaca response body terlebih dahulu untuk mendeteksi error, yang memperlambat proses troubleshooting.
+
+- **📊 Dashboard Monitoring Tidak Akurat** :
+  Hal ini membuat metrik monitoring tidak sesuai dengan kondisi sebenarnya dan dapat menutupi masalah yang seharusnya terdeteksi, seperti meningkatnya error 500 atau request tidak valid.
+
+- **🚫 Deteksi dan Peringatan Otomatis Menjadi Tidak Efektif** :
+  Tools monitoring seperti [New Relic](https://newrelic.com/) atau [AWS CloudWatch](https://aws.amazon.com/cloudwatch/) mendukung fitur alert otomatis berdasarkan status code. Dengan mengirimkan status code 200 OK untuk semua respons, peringatan otomatis tidak akan berfungsi dengan benar, sehingga masalah serius bisa terlewat.
+
+- **⚙️ Tidak Sesuai Standar HTTP** :
+  Pendekatan ini tidak sesuai dengan standar HTTP, yang menyebabkan aplikasi menjadi lebih sulit dipahami dan dikelola oleh tim atau tools yang sesuai dengan standar ini.
+
+## 💡 Tips untuk Menghandle Error di Client
+
+Jika Anda kesulitan meng-handle error yang di-throw oleh beberapa dependency, misalnya [Axios](https://axios-http.com/docs/intro), Anda bisa menambahkan opsi 'validateStatus' pada instance Axios Anda.
+
+![ValidateStatus](/images/blog/axios-options.png)
+
+validateStatus adalah fungsi yang menerima satu argument statusCode (status: number) dan me-return boolean. Jika tidak diberikan, default-nya adalah:
+
+```js
+validateStatus: (s) => s < 400;
+```
+
+Dengan pengaturan ini, Anda dapat menyesuaikan status mana yang dianggap error di client-side tanpa mengubah status code server.
