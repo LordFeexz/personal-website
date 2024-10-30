@@ -9,6 +9,7 @@ import REMIX from "@/components/images/remix.jpg";
 import PUREFUNCTION from "@/components/images/pure-function.png";
 import FETCHANDAXIOS from "@/components/images/fetch-vs-axios.jpg";
 import STATUS200 from "@/components/images/200.jpeg";
+import CURRYINGFUNCTION from "@/components/images/curry-func.png";
 
 export interface BlogData {
   slug: string;
@@ -20,6 +21,13 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "currying-func") as MdxFiles,
+      image: CURRYINGFUNCTION,
+      name: "Currying Function",
+      slug: "currying-function",
+      keywords: ["currying", "functional-programming", "function-composition"],
+    },
     {
       file: loadBlogMdx("en", "status-code-always-200") as MdxFiles,
       image: STATUS200,
@@ -120,6 +128,13 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "currying-func") as MdxFiles,
+      image: CURRYINGFUNCTION,
+      name: "Fungsi Curry",
+      slug: "currying-function",
+      keywords: ["currying", "functional-programming", "function-composition"],
+    },
     {
       file: loadBlogMdx("id", "status-code-always-200") as MdxFiles,
       image: STATUS200,

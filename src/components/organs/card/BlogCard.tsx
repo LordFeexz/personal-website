@@ -21,6 +21,7 @@ function BlogCard({ data, lang, className }: BlogCardProps) {
         "hover:scale-105 transition-all duration-300",
         "shadow-sm hover:shadow-lg"
       )}
+      as="article"
     >
       <CardHeader>
         <LazyLoadImg

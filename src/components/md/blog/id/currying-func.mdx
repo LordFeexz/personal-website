@@ -1,0 +1,18 @@
+# Currying dalam Pemrograman Fungsional 🌟
+
+Currying adalah teknik dalam pemrograman fungsional yang mana sebuah fungsi dengan banyak argumen diubah menjadi rangkaian fungsi yang masing-masing menerima satu argumen.
+Ini berarti fungsi yang awalnya membutuhkan beberapa argumen, setelah di-"currying," akan menjadi fungsi yang berurutan, di mana setiap fungsi hanya memerlukan satu argumen dan mengembalikan fungsi lain yang siap menerima argumen berikutnya.
+
+## Contoh Currying di TypeScript
+
+![example](/images/blog/curr-func-example.png)
+
+Pada contoh di bawah ini, fungsi `addEmployee` adalah contoh penerapan currying secara implisit di TypeScript dalam penerapan thunk Redux.
+Ini bisa terlihat dari struktur fungsi yang dipanggil bertahap, di mana fungsi pertama `addEmployee` menerima parameter `data` dan mengembalikan sebuah fungsi lain yang menerima `dispatch` dan `getState` dari Redux.
+Kemudian, fungsi ini menghasilkan Promise yang menjalankan proses async.
+
+## Manfaat Currying 🚀
+
+**Reusabilitas**: Memungkinkan pembuatan fungsi baru dari fungsi yang sudah ada dengan mengisi sebagian argumen. ♻️
+**Komposisi Fungsi**: Memudahkan penyusunan beberapa fungsi bersama-sama (function composition). 🔗
+**Kode Lebih Modular**: Memungkinkan kode lebih fleksibel dan modular karena setiap fungsi hanya berfokus pada satu argumen. 🛠️

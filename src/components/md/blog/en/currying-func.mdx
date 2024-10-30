@@ -1,0 +1,19 @@
+# Currying in Functional Programming 🌟
+
+Currying is a technique in functional programming in which a function with many arguments is transformed into a series of functions that each accept one argument.
+This means that a function that initially requires multiple arguments,
+after "currying," will become a sequential function, where each function requires only one argument and returns another function that is ready to accept the next argument.
+
+## Example Currying in TypeScript
+
+![example](/images/blog/curr-func-example.png)
+
+In the example above, the `addEmployee` function is an example of implementing currying implicitly in TypeScript in the implementation of thunk Redux.
+This can be seen from the structure of the function called incrementally, where the first function `addEmployee` receives data parameters and returns another function that receives `dispatch` and `getState` from Redux.
+Then, this function generates a Promise that runs an async process.
+
+## Benefits of Currying 🚀
+
+**Reusability**: Allows the creation of new functions from existing ones by partially filling in the arguments. ♻️
+**Function Composition**: Facilitates the arrangement of several functions together (function composition). 🔗
+**Modular Code**: Allows for more flexible and modular code as each function focuses on only one argument. 🛠️
