@@ -1,0 +1,34 @@
+# 📌 What is Database Lock?
+
+A **database lock** is a mechanism used to control access to data in a database. Its purpose is to prevent multiple users from changing the same data at the same time, thus avoiding conflicts or corrupted data.
+
+## 🔒 Why Must It Be Locked?
+
+- **Data Consistency**: Ensures data is always accurate and consistent.
+- **Data Integrity**: Prevents data from being corrupted due to simultaneous changes (race conditions).
+- **Optimal Performance**: Helps optimize database performance by organizing the order of data access.
+
+## 🔍 Types of Database Lock
+
+In general, there are two main types of database locks:
+
+1. **Shared Lock (Read)**:
+
+   - Given when a user wants to read data.
+   - Multiple users can have a shared lock on the same data simultaneously.
+
+2. **Exclusive Lock (Write)**:
+   - Given when a user wants to change data.
+   - Only one user can have an exclusive lock on certain data at a time.
+
+## 💡 Example
+
+Imagine we have a table called "bank_account." If two users try to withdraw money from the same account at the same time without a lock, there could be a balance calculation error. With a lock, only one user can access the account at a time.
+
+## 🕒 When Should Locks Be Used?
+
+- **Transactions**: For operations (like money transfers) that must be treated as a single unit.
+- **Updating Data**: When making changes to data in tables.
+- **Concurrent Access**: When multiple users need to access the same data.
+
+> ⚠️ **Note**: Careless use of database locks can lead to a **Deadlock**. This is a condition where two or more transactions are waiting for each other to release a lock, resulting in a standstill where no transaction can proceed.

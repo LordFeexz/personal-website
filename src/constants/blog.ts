@@ -10,6 +10,7 @@ import PUREFUNCTION from "@/components/images/pure-function.png";
 import FETCHANDAXIOS from "@/components/images/fetch-vs-axios.jpg";
 import STATUS200 from "@/components/images/200.jpeg";
 import CURRYINGFUNCTION from "@/components/images/curry-func.png";
+import DBLOCK from "@/components/images/db-lock.jpg";
 
 export interface BlogData {
   slug: string;
@@ -21,6 +22,21 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "database-lock") as MdxFiles,
+      image: DBLOCK,
+      name: "Database Lock",
+      slug: "database-lock",
+      keywords: [
+        "database lock",
+        "database",
+        "database-lock",
+        "database-locks",
+        "database-locking",
+        "database-locks",
+        "database-locks",
+      ],
+    },
     {
       file: loadBlogMdx("en", "currying-func") as MdxFiles,
       image: CURRYINGFUNCTION,
@@ -128,6 +144,21 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "database-lock") as MdxFiles,
+      image: DBLOCK,
+      name: "Database Lock",
+      slug: "database-lock",
+      keywords: [
+        "database lock",
+        "database",
+        "database-lock",
+        "database-locks",
+        "database-locking",
+        "database-locks",
+        "database-locks",
+      ],
+    },
     {
       file: loadBlogMdx("id", "currying-func") as MdxFiles,
       image: CURRYINGFUNCTION,

@@ -1,0 +1,34 @@
+# 🔒 Apa Itu Database Lock?
+
+**Database lock** adalah mekanisme yang digunakan untuk mengontrol akses ke data dalam sebuah database. Tujuannya adalah untuk mencegah beberapa pengguna mengubah data yang sama secara bersamaan, sehingga menghindari konflik atau kerusakan data.
+
+## 🤔 Kenapa Harus di Lock?
+
+- **Konsistensi Data**: Memastikan data selalu akurat dan konsisten.
+- **Integritas Data**: Mencegah data menjadi rusak akibat perubahan yang dilakukan secara bersamaan (race condition).
+- **Kinerja Optimal**: Membantu mengoptimalkan kinerja database dengan mengatur urutan akses ke data.
+
+## 🔑 Jenis-Jenis Database Lock
+
+Secara umum, ada dua jenis utama database lock:
+
+1. **Shared Lock (Read)**:
+
+   - Diberikan ketika seorang pengguna ingin membaca data.
+   - Beberapa pengguna dapat memiliki shared lock pada data yang sama secara bersamaan.
+
+2. **Exclusive Lock (Write)**:
+   - Diberikan ketika seorang pengguna ingin mengubah data.
+   - Hanya satu pengguna yang dapat memiliki exclusive lock pada data tertentu pada suatu waktu.
+
+## 📌 Contoh
+
+Misalnya, kita memiliki tabel "bank_account". Jika dua pengguna mencoba menarik uang dari akun yang sama secara bersamaan tanpa adanya lock, maka bisa terjadi kesalahan perhitungan saldo. Dengan adanya lock, hanya satu pengguna yang bisa mengakses akun tersebut pada satu waktu.
+
+## 📅 Kapan Lock Digunakan?
+
+- **Transaksi**: Saat melakukan serangkaian operasi (misalnya, transfer uang) yang harus dianggap sebagai satu kesatuan.
+- **Update Data**: Saat mengubah data dalam tabel.
+- **Akses Bersamaan**: Saat beberapa pengguna mengakses data yang sama.
+
+> ⚠️ **Catatan**: Penggunaan database lock secara sembarangan dapat menyebabkan **Deadlock**. Ini adalah kondisi di mana dua atau lebih transaksi saling menunggu untuk mendapatkan lock, sehingga tidak ada yang bisa melanjutkan transaksi.
