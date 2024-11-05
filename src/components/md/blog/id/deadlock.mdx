@@ -1,0 +1,50 @@
+# 💀 Apa itu Deadlock?
+
+**Deadlock** adalah kondisi di mana dua atau lebih transaksi saling menunggu satu sama lain untuk melepaskan **lock** 🔒 pada data yang dibutuhkan. Hal ini menyebabkan proses transaksi menjadi macet 🛑 dan tidak ada yang bisa melanjutkan.
+
+---
+
+### 📝 Contoh
+
+Bayangkan ada dua akun bank, **A** dan **B**, keduanya memiliki saldo yang cukup untuk melakukan transfer. Berikut adalah skenario yang dapat menyebabkan **deadlock**:
+
+1. **Transaksi 1:**
+
+   - 👤 Pengguna A ingin mentransfer uang ke akun **B**.
+   - 🔒 Transaksi 1 mendapatkan lock pada akun **A**.
+   - 🔄 Transaksi 1 kemudian mencoba mendapatkan lock pada akun **B**, tetapi akun **B** sudah terkunci oleh Transaksi 2.
+   - ⏳ Transaksi 1 harus menunggu hingga Transaksi 2 melepaskan lock pada **B**.
+
+2. **Transaksi 2:**
+   - 👤 Pengguna B ingin mentransfer uang ke akun **A**.
+   - 🔒 Transaksi 2 mendapatkan lock pada akun **B**.
+   - 🔄 Transaksi 2 kemudian mencoba mendapatkan lock pada akun **A**, tetapi akun **A** sudah terkunci oleh Transaksi 1.
+   - ⏳ Transaksi 2 harus menunggu hingga Transaksi 1 melepaskan lock pada **A**.
+
+---
+
+### ⚠️ Situasi Deadlock
+
+- **Kedua transaksi saling menunggu**: Transaksi 1 menunggu Transaksi 2 untuk melepaskan lock pada **B**, sementara Transaksi 2 menunggu Transaksi 1 untuk melepaskan lock pada **A**.
+- **Tidak ada yang bisa melanjutkan**: Karena keduanya saling menunggu, tidak ada yang bisa menyelesaikan transaksinya. Sistem menjadi "terjebak" 🌐 dalam kondisi **deadlock**.
+
+---
+
+### ❓ Mengapa Deadlock Terjadi?
+
+- **Urutan akses data yang berbeda**: Kedua transaksi mengakses data dengan urutan berbeda, sehingga terjadi persaingan untuk mendapatkan lock.
+- **Kurangnya mekanisme pencegahan**: Jika sistem database tidak memiliki mekanisme untuk mendeteksi dan mencegah deadlock, kondisi ini akan sering terjadi.
+
+---
+
+### 🔍 Bagaimana Mencegah Deadlock?
+
+- **Menetapkan urutan lock**: Tentukan urutan yang tetap untuk mendapatkan lock pada berbagai sumber daya. Misalnya, selalu lock akun dengan ID yang lebih kecil terlebih dahulu 🔢.
+- **Menggunakan timeout**: Atur batas waktu ⏰ untuk menunggu lock. Jika suatu transaksi tidak mendapatkan lock dalam waktu tertentu, transaksi tersebut akan dibatalkan dan diulang.
+- **Mendeteksi dan menyelesaikan deadlock**: Sistem database dapat mendeteksi deadlock secara otomatis dan membatalkan satu transaksi agar transaksi lainnya bisa lanjut.
+
+---
+
+### 🚀 Pentingnya Mencegah Deadlock
+
+Deadlock dapat menurunkan kinerja sistem database 📉 dan bahkan menyebabkan data menjadi tidak konsisten. Oleh karena itu, penting untuk memahami mekanisme deadlock dan menerapkan langkah pencegahan yang tepat.

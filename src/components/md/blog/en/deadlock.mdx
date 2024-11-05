@@ -1,0 +1,50 @@
+# 💀 What is Deadlock?
+
+A **Deadlock** is a condition in which two or more transactions are waiting for each other to release the lock on the data they need. This causes the transaction process to get "stuck" 🚫 and prevents any transaction from continuing.
+
+---
+
+### 📝 Example
+
+Imagine there are two bank accounts, **A** and **B**, both with sufficient balance to make transfers. Here’s how a deadlock might happen:
+
+1. **Transaction 1:**
+
+   - 👤 User A wants to transfer money to account **B**.
+   - 🔒 Transaction 1 acquires a lock on account **A**.
+   - 🔄 Transaction 1 then tries to acquire a lock on account **B**, but **B** is already locked by Transaction 2.
+   - ⏳ Transaction 1 must wait until Transaction 2 releases the lock on **B**.
+
+2. **Transaction 2:**
+   - 👤 User B wants to transfer money to account **A**.
+   - 🔒 Transaction 2 acquires a lock on account **B**.
+   - 🔄 Transaction 2 then tries to acquire a lock on account **A**, but **A** is already locked by Transaction 1.
+   - ⏳ Transaction 2 must wait until Transaction 1 releases the lock on **A**.
+
+---
+
+### ⚠️ Deadlock Situation
+
+- **Both transactions wait for each other**: Transaction 1 waits for Transaction 2 to release the lock on **B**, while Transaction 2 waits for Transaction 1 to release the lock on **A**.
+- **No progress**: Because both transactions are waiting, neither can complete. The system appears to be in a "stuck" 💫 deadlock state.
+
+---
+
+### ❓ Why Does Deadlock Happen?
+
+- **Different order of data access**: When transactions access data in different sequences, conflicts over locks can arise.
+- **Lack of deadlock prevention mechanisms**: If the database lacks the ability to detect or prevent deadlocks, this condition can easily occur.
+
+---
+
+### 🔍 How To Prevent Deadlock?
+
+- **Assign a lock sequence**: Define a strict order for acquiring locks on resources. For example, always lock accounts with smaller IDs first 🔢.
+- **Use timeout**: Set a timeout ⏰ for waiting on locks. If a transaction doesn’t acquire a lock within the allotted time, it’s canceled and can retry later.
+- **Detect and resolve deadlocks**: Enable the database system to automatically detect deadlock conditions and choose one transaction to cancel so others can proceed.
+
+---
+
+### 🚀 The Importance of Preventing Deadlock
+
+Deadlocks can degrade the database’s performance 📉 and even lead to inconsistent data. Understanding the deadlock mechanism and applying preventive strategies is essential for reliable database management.

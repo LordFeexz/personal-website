@@ -11,6 +11,7 @@ import FETCHANDAXIOS from "@/components/images/fetch-vs-axios.jpg";
 import STATUS200 from "@/components/images/200.jpeg";
 import CURRYINGFUNCTION from "@/components/images/curry-func.png";
 import DBLOCK from "@/components/images/db-lock.jpg";
+import DEADLOCK from "@/components/images/deadlock.png";
 
 export interface BlogData {
   slug: string;
@@ -22,6 +23,13 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "deadlock") as MdxFiles,
+      image: DEADLOCK,
+      name: "Deadlock",
+      slug: "deadlock",
+      keywords: ["deadlock", "deadlocks", "deadlock-prevention"],
+    },
     {
       file: loadBlogMdx("en", "database-lock") as MdxFiles,
       image: DBLOCK,
@@ -144,6 +152,13 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "deadlock") as MdxFiles,
+      image: DEADLOCK,
+      name: "Deadlock",
+      slug: "deadlock",
+      keywords: ["deadlock", "deadlocks", "pencegahan-deadlock"],
+    },
     {
       file: loadBlogMdx("id", "database-lock") as MdxFiles,
       image: DBLOCK,
