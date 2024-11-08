@@ -32,7 +32,11 @@ export default function UseMdxComponent({ children }: MDXComponents) {
               {...props}
             />
           ),
-        p: (props) => <p {...props} className="font-sans" />,
+        p: ({ children, ...props }) => (
+          <p {...props} className="font-sans">
+            {children}
+          </p>
+        ),
         h2: (props) => (
           <h2
             className="font-sans text-xl font-medium dark:text-neutral-300"

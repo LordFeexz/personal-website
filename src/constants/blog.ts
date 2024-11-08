@@ -12,6 +12,7 @@ import STATUS200 from "@/components/images/200.jpeg";
 import CURRYINGFUNCTION from "@/components/images/curry-func.png";
 import DBLOCK from "@/components/images/db-lock.jpg";
 import DEADLOCK from "@/components/images/deadlock.png";
+import DB_TRANSACTION from "@/components/images/db-transaction.png";
 
 export interface BlogData {
   slug: string;
@@ -23,6 +24,13 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "db-transaction") as MdxFiles,
+      image: DB_TRANSACTION,
+      name: "Database Transaction",
+      slug: "database-transaction",
+      keywords: ["database transaction", "database"],
+    },
     {
       file: loadBlogMdx("en", "deadlock") as MdxFiles,
       image: DEADLOCK,
@@ -152,6 +160,13 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "db-transaction") as MdxFiles,
+      image: DB_TRANSACTION,
+      name: "Transaksi Database",
+      slug: "transaksi-database",
+      keywords: ["database transaction", "database"],
+    },
     {
       file: loadBlogMdx("id", "deadlock") as MdxFiles,
       image: DEADLOCK,

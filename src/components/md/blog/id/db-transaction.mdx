@@ -1,0 +1,51 @@
+# Database Transaction 📊
+
+Database transaction adalah satu atau lebih operasi database yang dieksekusi sebagai unit kerja tunggal, yang memastikan bahwa perubahan pada data terjadi secara lengkap atau tidak sama sekali. Hal ini penting dalam sistem basis data untuk menjamin konsistensi data dan integritas. Dalam transaksi, ada empat properti utama yang sering disebut sebagai **ACID**:
+
+1. **Atomicity** 🔒: Menjamin bahwa seluruh operasi dalam transaksi dieksekusi sepenuhnya atau tidak ada yang dieksekusi sama sekali. Jika terjadi kegagalan pada salah satu operasi, maka seluruh transaksi akan dibatalkan.
+2. **Consistency** 📏: Memastikan bahwa data yang diproses memenuhi semua aturan dan batasan yang telah ditentukan dalam database.
+3. **Isolation** 🛡️: Menyediakan isolasi agar transaksi yang berjalan secara bersamaan tidak saling mempengaruhi.
+4. **Durability** 💾: Menjamin bahwa perubahan yang dilakukan oleh transaksi yang telah selesai akan tetap tersimpan meskipun terjadi gangguan sistem.
+
+## Contoh Kasus Penggunaan Database Transaction 💡
+
+Transaksi sangat penting dalam sistem keuangan, misalnya saat pengguna melakukan transfer dana antar rekening. Operasi ini mencakup dua langkah penting:
+
+- Mengurangi saldo rekening pengirim 💸.
+- Menambah saldo rekening penerima 💰.
+
+Jika hanya satu operasi yang berhasil, maka saldo di salah satu rekening tidak akan sesuai. Dengan menggunakan transaksi, kedua operasi ini dieksekusi sebagai satu unit kerja tunggal. Jika salah satu operasi gagal, keseluruhan transaksi akan dibatalkan 🔄.
+
+## Langkah-Langkah dalam Database Transaction 📝
+
+Berikut adalah langkah umum dalam menjalankan database transaction:
+
+1. **Begin Transaction** 🏁: Memulai transaksi.
+2. **Execute Operations** 🔄: Menjalankan operasi database seperti `INSERT`, `UPDATE`, atau `DELETE`.
+3. **Commit** ✅: Menyimpan perubahan secara permanen dalam database setelah seluruh operasi dalam transaksi berhasil dieksekusi.
+4. **Rollback** ⏪: Mengembalikan database ke kondisi semula jika terjadi kegagalan pada salah satu operasi, sehingga tidak ada perubahan yang tersimpan.
+
+## Jenis Isolation Level 🔐
+
+**Isolation level** menentukan sejauh mana sebuah transaksi harus diisolasi dari transaksi lain. Berikut adalah beberapa jenis isolation level yang umum digunakan:
+
+1. **Read Uncommitted** 👀: Mengizinkan transaksi membaca perubahan yang belum disimpan (belum di-commit) oleh transaksi lain.
+2. **Read Committed** 📖: Transaksi hanya bisa membaca data yang sudah di-commit oleh transaksi lain.
+3. **Repeatable Read** 🔄: Mencegah transaksi lain untuk mengubah data yang sedang dibaca oleh transaksi saat ini hingga transaksi tersebut selesai.
+4. **Serializable** 🔒: Memberikan tingkat isolasi tertinggi dengan memastikan bahwa transaksi berjalan seolah-olah secara berurutan satu per satu, tanpa ada transaksi yang berjalan bersamaan.
+
+## Implementasi Database Transaction 🖥️
+
+Contoh implementasi transaksi pada SQL:
+
+```sql
+BEGIN TRANSACTION;
+
+UPDATE account SET balance = balance - 100 WHERE account_id = 1;
+
+UPDATE account SET balance = balance + 100 WHERE account_id = 2;
+
+COMMIT;
+```
+
+Dalam kode di atas, operasi UPDATE pertama mengurangi saldo akun 1 sebesar 100, lalu UPDATE kedua menambahkan saldo akun 2 sebesar 100. Jika salah satu operasi gagal, kita dapat melakukan ROLLBACK untuk mengembalikan database ke keadaan semula 🔄.
