@@ -9,7 +9,6 @@ export const metadata: Metadata = {
       ? "http://localhost:3000"
       : process.env.DOMAIN || ""
   ),
-
   description: "Ananda Fiqri Software Engineer Personal Website and Blog",
   keywords:
     "typescript, nextjs, ananda fiqri, golang, python, rust, javascript, astro, vue",
@@ -22,8 +21,10 @@ export const metadata: Metadata = {
     url: process.env.DOMAIN,
     siteName: "Ananda Fiqri Website and Blog",
     locale: "id-ID",
+    title: "Ananda Fiqri - Software Engineer",
   },
-  title:'Ananda Fiqri - Software Engineer',
+  title: "Ananda Fiqri - Software Engineer",
+  applicationName: "Ananda Fiqri - Personal Website",
 };
 
 export default function RootLayout({ children }: ChildrenProps) {
