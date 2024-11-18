@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     siteName: "Ananda Fiqri Website and Blog",
     locale: "id-ID",
   },
+  title:'Ananda Fiqri - Software Engineer',
 };
 
 export default function RootLayout({ children }: ChildrenProps) {
