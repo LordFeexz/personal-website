@@ -10,6 +10,7 @@ export const CAREER = [
     logo: FGJPG,
     location: "Remote/Indonesia",
     startDate: new Date("12-20-2022"),
+    endDate: new Date("10-10-2024"),
     slug: "Forum-Gamers",
     responsibility: [
       "Initiate and setup all projects",
@@ -60,6 +61,7 @@ export const CAREER = [
     logo: Dealls,
     location: "Remote/Indonesia",
     startDate: new Date("07-08-2024"),
+    endDate: new Date("12-01-2024"),
     slug: "Dealls",
     responsibility: [
       "Encourage and motivate the mentee to stay committed to their goals, especially during challenging times",

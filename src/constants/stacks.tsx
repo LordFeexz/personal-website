@@ -32,6 +32,7 @@ import {
   DiRedis,
   SiRust,
   SiBun,
+  SiRemix,
 } from "@/components/atoms/icons/stacks";
 import { LinkPreview } from "@/components/ui/link-preview";
 
@@ -45,6 +46,11 @@ export const TECHSTACKS: Record<string, ReactNode> = {
   postgres: (
     <LinkPreview url="https://www.postgresql.org/">
       <BiLogoPostgresql size={size} className=" text-blue-900" />
+    </LinkPreview>
+  ),
+  remix: (
+    <LinkPreview url="https://remix.run">
+      <SiRemix size={size} />
     </LinkPreview>
   ),
   python: (

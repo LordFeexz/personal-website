@@ -16,6 +16,8 @@ import SERENETHERAPY from "@/components/images/serene-therapy.png";
 import SERENEACTIVITY from "@/components/images/serene-activity.jpeg";
 import SERENEHOSPITAL from "@/components/images/serene-nearby-clinic.png";
 import SERENEMOODS from "@/components/images/serene-moods.png";
+import CVSCOREHOME from "@/components/images/cv-score-home.png";
+import CVSCOREGEN from "@/components/images/cv-score-gen.png";
 import type { MyProjects } from "@/interfaces/projects";
 
 export const PROJECTS: MyProjects[] = [
@@ -47,6 +49,27 @@ export const PROJECTS: MyProjects[] = [
     ],
     repo: "https://github.com/forumGamers",
     thumbnail: FGFIGMA,
+  },
+  {
+    title: "CV Score",
+    slug: "cv-score",
+    desc: "check the match of your CV with job description automatically using AI. Your CV score will give you a score and detailed analysis, as well as suggestions to improve your CV.",
+    stacks: ["remix", "vercel", "bun", "tailwind", "react"],
+    featured: true,
+    imgs: [
+      {
+        url: CVSCOREHOME,
+        alt: "home page",
+        desc: "home page",
+      },
+      {
+        url: CVSCOREGEN,
+        alt: "generate page",
+        desc: "generate page",
+      },
+    ],
+    thumbnail: CVSCOREHOME,
+    live: "https://www.skor-cv-mu.my.id?lang=id",
   },
   {
     title: "Hackpark",
