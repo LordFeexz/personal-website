@@ -11,6 +11,7 @@ import MainFooter from "@/components/atoms/footer/mainFooter";
 import PageLoader from "@/components/atoms/loaders/pageLoader";
 import { VercelAnalytics } from "@/providers/vercel.analytics.providers";
 import { SpeedInsights } from "@/providers/vercel.speedInsight.providers";
+import Script from "next/script";
 
 export default function MainLayout({ children }: ChildrenProps) {
   return (
@@ -23,6 +24,11 @@ export default function MainLayout({ children }: ChildrenProps) {
           name="google-site-verification"
           content={`google-site-verification: ${process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION}.html`}
         ></meta>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="9f350a97-faf5-4ba2-8b8f-91be057243dc"
+        />
       </head>
       <body className={soraSans.className}>
         <Suspense fallback={<PageLoader />}>
