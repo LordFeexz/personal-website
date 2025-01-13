@@ -18,7 +18,9 @@ import SERENEHOSPITAL from "@/components/images/serene-nearby-clinic.png";
 import SERENEMOODS from "@/components/images/serene-moods.png";
 import CVSCOREHOME from "@/components/images/cv-score-home.png";
 import CVSCOREGEN from "@/components/images/cv-score-gen.png";
+import CVDECLINED from "@/components/images/cv-declined.jpg";
 import type { MyProjects } from "@/interfaces/projects";
+import LazyLoadImg from "@/components/atoms/image/lazyLoadImg";
 
 export const PROJECTS: MyProjects[] = [
   {
@@ -70,6 +72,80 @@ export const PROJECTS: MyProjects[] = [
     ],
     thumbnail: CVSCOREHOME,
     live: "https://www.skor-cv-mu.my.id?lang=id",
+    timelines: {
+      title: "Changelog from my journey building Cv Score",
+      desc: "starting from simple idea to solve many jobseeker problems",
+      datas: [
+        {
+          title: "Initial Idea",
+          content: (
+            <div className="text-neutral-900 dark:text-neutral-300 antialiased text-pretty text-base indent-4">
+              <hgroup className="space-y-4">
+                <p>
+                  I once watched a video on YouTube featuring an HR
+                  professional. In it, they shared a story about screening CVs
+                  from job applicants.
+                </p>
+                <p>
+                  Out of <strong>900</strong> CVs submitted, only a handful
+                  managed to meet <strong>80%</strong> of the criteria.
+                </p>
+                <LazyLoadImg
+                  src={CVDECLINED}
+                  alt="CV Declined"
+                  height={250}
+                  width={350}
+                  className="object-cover object-center rounded-lg shadow-lg"
+                />
+                <p>
+                  Those that reached <strong>60%?</strong> You could count them
+                  on one hand. Sadly, the majority scored only{" "}
+                  <strong>30-50%</strong>. 😢
+                </p>
+                <p>
+                  What’s even more disheartening is that CVs scoring just 50%
+                  were still reviewed. The rest? Straight to the Recycle Bin.
+                </p>
+                <p>
+                  Can you imagine the immense effort job seekers put in, only to
+                  never even get the chance to be considered because their CVs
+                  weren’t optimized?
+                </p>
+                <div className="indent-0 text-pretty">
+                  <p>
+                    🎯 This is where the idea of <strong>Score CV Mu</strong>{" "}
+                    was born.
+                  </p>
+                  <p>I want to help job seekers:</p>
+                  <ul className="list-disc">
+                    <li>
+                      ✅ Understand what recruiters are truly looking for.
+                    </li>
+                    <li>
+                      ✅ Assess how well their CV aligns with the required
+                      criteria.
+                    </li>
+                    <li>
+                      ✅ Receive actionable tips to increase their chances of
+                      making their CV not just noticed but truly stand out.
+                    </li>
+                  </ul>
+                </div>
+                <p>
+                  With this tool, the hope is to eliminate the story of CVs
+                  ending up in the Recycle Bin simply due to poor formatting,
+                  irrelevant information, or a lack of visual appeal.
+                </p>
+                <p>
+                  Everyone has potential, and that potential deserves to shine
+                  through their CV.
+                </p>
+              </hgroup>
+            </div>
+          ),
+        },
+      ],
+    },
   },
   {
     title: "Hackpark",

@@ -7,6 +7,7 @@ import type { PageProps } from "@/interfaces";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Meteors } from "@/components/ui/meteors";
+import Timeline from "@/components/ui/timeline";
 
 export default function Page({
   params,
@@ -25,6 +26,13 @@ export default function Page({
       <BackBtn url="/projects" />
       <PageHeading title={data.title} desc={data.desc} />
       <ProjectDetail {...data} />
+      {data.timelines && (
+        <Timeline
+          title={data.timelines.title}
+          desc={data.timelines.desc}
+          datas={data.timelines.datas}
+        />
+      )}
     </Container>
   );
 }

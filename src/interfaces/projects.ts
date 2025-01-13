@@ -1,3 +1,4 @@
+import type { TimelineProps } from "@/components/ui/timeline";
 import type { StaticImageData } from "next/image";
 
 export interface MyProjects {
@@ -10,6 +11,7 @@ export interface MyProjects {
   repo?: string;
   thumbnail: string | StaticImageData;
   live?: string;
+  timelines?: TimelineProps;
 }
 
 export interface MyProjectsImg {
