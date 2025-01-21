@@ -1,0 +1,21 @@
+📂 **Imagine you have an API** that allows users to upload CSV files. The problem is that the uploaded file might contain **+1 million records** 😱.
+
+⏳ **Each uploaded file could take** 1-5 minutes to process. If you implement a synchronous REST API that waits for the processing to finish before responding, it will significantly **impact the user experience** 🥴. Not to mention the issues caused if they **refresh** or **upload the file again**.
+
+🤔 **So, how can you handle this?**
+
+You can implement an **async API** 🚀.
+
+### 🔍 **What is an async API?**
+
+With this approach:
+
+1️⃣ **The Server Responds Immediately** ✅When a file is uploaded, the server only validates that the file has been received, then quickly responds without fully processing the data at that moment.
+
+2️⃣ **Process the Data in the Background** 🛠️The uploaded data will be added to a **queue** or handed over to a **worker** running asynchronously on the server.
+
+3️⃣ **Provide an Endpoint to Track Progress** 🔄Users can check the **processing status** via another endpoint, such as whether the file is still being processed, completed, or failed.
+
+🎯 **The Result?**The system becomes more **efficient** ⚡, the server isn't overloaded 🖥️, and users don’t have to wait for a long time ⏱️.
+
+**Async API is the solution** for handling heavy tasks while delivering a better user experience 💡.

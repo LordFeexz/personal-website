@@ -1,0 +1,21 @@
+📂 **Bayangkan kamu punya API** untuk user meng-upload file CSV. Masalahnya adalah file yang di-upload user bisa saja berisi hingga **+1 juta data** 😱.
+
+⏳ **Tiap file yang di-upload bisa memakan waktu** 1-5 menit untuk diproses. Kalau kamu implementasikan REST API sync yang menunggu prosesnya selesai sebelum memberi respons, maka ini akan sangat **mengganggu pengalaman user** 🥴. Belum lagi jika mereka **refresh** atau **upload ulang**
+
+🤔 **Jadi, gimana cara mengatasinya?**
+
+Kamu bisa implementasikan **API yang async** 🚀.
+
+🔍 **Gimana itu async API?**Dengan pendekatan ini, maka:
+
+1️⃣ **Server Segera Mengembalikan Respons** ✅Ketika file diunggah, server hanya memvalidasi bahwa file telah diterima, lalu langsung merespons tanpa memproses data secara menyeluruh pada saat itu juga.
+
+2️⃣ **Proses Data di Latar Belakang** 🛠️Data yang diunggah akan dimasukkan ke dalam **antrean** atau diserahkan kepada **worker** yang berjalan secara async di server.
+
+3️⃣ **Menyediakan Endpoint untuk Melihat Progress** 🔄User dapat memantau **status pemrosesan** dari endpoint lain, misalnya apakah file sedang diproses, sudah selesai, atau gagal.
+
+🎯 **Hasilnya?**
+
+Sistem menjadi lebih **efisien** ⚡, server tidak terbebani 🖥️, dan user tidak perlu menunggu lama ⏱️.
+
+**Async API adalah solusi** untuk meng-handle task berat dengan experience user yang lebih baik 💡.

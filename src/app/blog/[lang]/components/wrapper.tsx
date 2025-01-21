@@ -27,7 +27,7 @@ import {
   useMemo,
 } from "react";
 
-export const ITEMS_PER_PAGE = 10;
+export const ITEMS_PER_PAGE = 9;
 
 interface BlogPageContextProps {
   activeLang: Lang;

@@ -13,6 +13,7 @@ import CURRYINGFUNCTION from "@/components/images/curry-func.png";
 import DBLOCK from "@/components/images/db-lock.jpg";
 import DEADLOCK from "@/components/images/deadlock.png";
 import DB_TRANSACTION from "@/components/images/db-transaction.png";
+import ASYNC from "@/components/images/async.jpeg";
 
 export interface BlogData {
   slug: string;
@@ -24,6 +25,19 @@ export interface BlogData {
 
 export const BLOG_DATAS: Record<Lang, BlogData[]> = {
   en: [
+    {
+      file: loadBlogMdx("en", "async-api") as MdxFiles,
+      image: ASYNC,
+      name: "Async API",
+      slug: "async-api",
+      keywords: [
+        "async",
+        "API",
+        "async api",
+        "api implementation",
+        "async api implementation",
+      ],
+    },
     {
       file: loadBlogMdx("en", "db-transaction") as MdxFiles,
       image: DB_TRANSACTION,
@@ -160,6 +174,19 @@ export const BLOG_DATAS: Record<Lang, BlogData[]> = {
     },
   ],
   id: [
+    {
+      file: loadBlogMdx("id", "async-api") as MdxFiles,
+      image: ASYNC,
+      name: "Async API",
+      slug: "async-api",
+      keywords: [
+        "async",
+        "API",
+        "async api",
+        "api implementation",
+        "async api implementation",
+      ],
+    },
     {
       file: loadBlogMdx("id", "db-transaction") as MdxFiles,
       image: DB_TRANSACTION,
