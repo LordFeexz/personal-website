@@ -12,10 +12,16 @@ import PageLoader from "@/components/atoms/loaders/pageLoader";
 import { VercelAnalytics } from "@/providers/vercel.analytics.providers";
 import { SpeedInsights } from "@/providers/vercel.speedInsight.providers";
 import Script from "next/script";
+import { cn } from "@/libs/utils";
 
 export default function MainLayout({ children }: ChildrenProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      suppressContentEditableWarning
+      className="scroll-smooth"
+    >
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <GtmHeadScript />
@@ -30,15 +36,21 @@ export default function MainLayout({ children }: ChildrenProps) {
           data-website-id="9f350a97-faf5-4ba2-8b8f-91be057243dc"
         />
       </head>
-      <body className={soraSans.className}>
+      <body
+        className={cn(
+          soraSans.className,
+          soraSans.variable,
+          "min-h-screen scroll-smooth"
+        )}
+      >
         <Suspense fallback={<PageLoader />}>
           <Loader
             color="#05b6d3"
             initialPosition={0.08}
             crawlSpeed={200}
             height={3}
-            crawl={true}
-            showSpinner={true}
+            crawl
+            showSpinner
             easing="ease"
             speed={200}
             shadow="0 0 10px #05b6d3,0 0 5px #45c6c0"
