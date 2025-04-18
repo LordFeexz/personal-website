@@ -33,7 +33,7 @@ export default function Error({ error, reset }: ErrorProps) {
           <div className="mt-10 flex space-x-3 sm:border-l sm:border-transparent sm:pl-6">
             <button
               onClick={reset}
-              className="inline-flex items-center rounded-md  border-transparent  bg-gradient-to-br from-red-400 to-yellow-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-gradient-to-br hover:from-red-600 hover:to-yellow-800 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              className="inline-flex items-center rounded-md  border-transparent  bg-linear-to-br from-red-400 to-yellow-600 px-4 py-2 text-sm font-medium text-white shadow-xs hover:bg-linear-to-br hover:from-red-600 hover:to-yellow-800 focus:outline-hidden focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
             >
               Try Again
             </button>

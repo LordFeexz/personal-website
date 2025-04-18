@@ -32,7 +32,7 @@ function MobileHeader() {
   if (!mounted) return null;
 
   return (
-    <section className="flex flex-col rounded-b-md px-4 py-4 shadow-sm lg:hidden">
+    <section className="flex flex-col rounded-b-md px-4 py-4 shadow-xs lg:hidden">
       <div
         className={`flex w-full justify-between ${
           isOpen ? "items-start" : "items-center"
@@ -54,7 +54,7 @@ function MobileHeader() {
           </div>
           <hgroup className="mt-1 flex items-center gap-2">
             <Link href="/" passHref>
-              <h2 className="font-sora flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">
+              <h2 className="font-sora grow whitespace-nowrap text-lg font-medium lg:text-xl">
                 Ananda Fiqri
               </h2>
             </Link>
@@ -68,7 +68,7 @@ function MobileHeader() {
             className={clsx(
               "mt-2 flex items-center gap-5 lg:hidden",
               isOpen &&
-                "h-[120px] flex-col-reverse !items-end justify-between pb-1"
+                "h-[120px] flex-col-reverse items-end! justify-between pb-1"
             )}
           >
             <ThemeToggleBtn />

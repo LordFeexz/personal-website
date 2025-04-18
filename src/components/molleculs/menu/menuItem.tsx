@@ -54,7 +54,7 @@ function MenuItem({
       className="cursor-pointer"
     >
       <div
-        className={`flex hover:lg:rounded-lg hover:lg:py-2 hover:lg:px-4 hover:scale-105 justify-center px-4 py-2 rounded-lg lg:rounded-full lg:p-2 gap-2 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-black hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 lg:hover:gap-3 lg:transition-all lg:duration-300 hover:dark:!bg-slate-300 hover:bg-neutral-800 ${className}`}
+        className={`flex lg:hover:rounded-lg lg:hover:py-2 lg:hover:px-4 hover:scale-105 justify-center px-4 py-2 rounded-lg lg:rounded-full lg:p-2 gap-2 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-black dark:lg:hover:bg-neutral-800 lg:hover:bg-neutral-200 lg:hover:gap-3 lg:transition-all lg:duration-300 dark:hover:bg-slate-300! hover:bg-neutral-800 ${className}`}
         {...handler}
       >
         {icon}
@@ -63,7 +63,7 @@ function MenuItem({
             {title}
           </div>
         )}
-        <div className="flex-grow lg:hidden">{title}</div>
+        <div className="grow lg:hidden">{title}</div>
         {!!children && <>{children}</>}
         {isHovered && (
           <BsArrowRightShort

@@ -24,7 +24,7 @@ function ServiceDetailCard({
           {featured && (
             <CardItem
               as="div"
-              className="absolute right-0 top-0 z-[2] rounded-bl-xl rounded-tr-xl bg-emerald-300 px-2 py-1 text-[13px] font-medium text-emerald-950"
+              className="absolute right-0 top-0 z-2 rounded-bl-xl rounded-tr-xl bg-emerald-300 px-2 py-1 text-[13px] font-medium text-emerald-950"
             >
               Featured
             </CardItem>

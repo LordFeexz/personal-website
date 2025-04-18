@@ -57,15 +57,15 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
     "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-syntax-highlighter": "^15.5.11",
-    "autoprefixer": "^10.0.1",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^4.1.4",
     "typescript": "^5"
   }
 }

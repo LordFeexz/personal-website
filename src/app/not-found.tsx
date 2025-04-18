@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <Container className="text-center !mt-48" data-aos="fade-left" as="section">
+    <Container className="text-center mt-48!" data-aos="fade-left" as="section">
       <hgroup>
         <h1 className="mb-4 text-6xl font-semibold text-red-500">404</h1>
         <p className="mb-4 text-lg text-gray-600 font-sora">

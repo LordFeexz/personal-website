@@ -14,7 +14,7 @@ function Copyright({ isHover }: CopyrightProps) {
         <HoverBorderGradient>
           <span>©</span>
           <span>{new Date().getFullYear()}</span> <span>by</span>{" "}
-          <span className="cursor-pointer hover:dark:text-neutral-400">
+          <span className="cursor-pointer dark:hover:text-neutral-400">
             Lord Feexz
           </span>
         </HoverBorderGradient>

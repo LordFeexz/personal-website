@@ -13,7 +13,7 @@ function BasicCard({
   as: Tag = "div",
   ...rest
 }: BasicCardProps) {
-  const classname = `rounded-xl shadow-sm transition-all duration-300 lg:hover:shadow-md ${className}`;
+  const classname = `rounded-xl shadow-xs transition-all duration-300 lg:hover:shadow-md ${className}`;
 
   return (
     <Tag data-testid="card" className={classname} {...rest}>

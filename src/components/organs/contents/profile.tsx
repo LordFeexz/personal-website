@@ -25,7 +25,7 @@ function Profile() {
   return (
     <header
       className={clsx(
-        "fixed z-20 w-full bg-white p-5 shadow-sm dark:border-b dark:border-neutral-800 dark:bg-dark lg:relative lg:border-none lg:!bg-transparent lg:p-0 xl:shadow-none",
+        "fixed z-20 w-full bg-white p-5 shadow-xs dark:border-b dark:border-neutral-800 dark:bg-dark lg:relative lg:border-none lg:bg-transparent! lg:p-0 xl:shadow-none",
         isOpen && "pb-0"
       )}
     >
@@ -36,7 +36,7 @@ function Profile() {
             className={clsx(
               "mt-2 flex items-center gap-5 lg:hidden",
               isOpen &&
-                "h-[120px] flex-col-reverse !items-end justify-between pb-1"
+                "h-[120px] flex-col-reverse items-end! justify-between pb-1"
             )}
           >
             <ThemeToggleBtn />

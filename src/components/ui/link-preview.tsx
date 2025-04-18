@@ -127,14 +127,14 @@ export const LinkPreview = memo(
                     },
                   }}
                   exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                  className="shadow-xl rounded-xl !z-50"
+                  className="shadow-xl rounded-xl z-50!"
                   style={{
                     x: translateX,
                   }}
                 >
                   <Link
                     href={url}
-                    className="block p-1 bg-white !z-50 border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
+                    className="block p-1 bg-white z-50! border-2 border-transparent shadow-sm rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
                     style={{ fontSize: 0 }}
                     target="_blank"
                   >
@@ -145,7 +145,7 @@ export const LinkPreview = memo(
                       quality={quality}
                       layout={layout}
                       priority={true}
-                      className="rounded-lg !z-50"
+                      className="rounded-lg z-50!"
                       alt="preview image"
                     />
                   </Link>

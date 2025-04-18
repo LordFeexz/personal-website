@@ -30,7 +30,7 @@ function ResumeBtn() {
   return (
     <button
       onClick={download}
-      className="flex items-center gap-2 text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 hover:dark:text-neutral-300"
+      className="flex items-center gap-2 text-neutral-600 transition-all duration-300 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-300"
       data-umami-event="Download Resume"
     >
       <div

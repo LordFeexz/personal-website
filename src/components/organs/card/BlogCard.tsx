@@ -19,7 +19,7 @@ function BlogCard({ data, lang, className }: BlogCardProps) {
         "flex flex-col",
         className,
         "hover:scale-105 transition-all duration-300",
-        "shadow-sm hover:shadow-lg"
+        "shadow-xs hover:shadow-lg"
       )}
       as="article"
     >
@@ -41,7 +41,7 @@ function BlogCard({ data, lang, className }: BlogCardProps) {
           </Link>
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex-grow">
+      <CardContent className="grow">
         <div className="flex flex-wrap gap-2 mb-4">
           {data.keywords.slice(0, 5).map((keyword) => (
             <span

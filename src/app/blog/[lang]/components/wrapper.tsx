@@ -137,7 +137,7 @@ function BlogList() {
           key={content.name}
           data={content}
           lang={activeLang}
-          className="group-hover/blog-card:[&:not(:hover)]:opacity-40"
+          className="[&:not(:hover)]:group-hover/blog-card:opacity-40"
         />
       ))}
     </div>

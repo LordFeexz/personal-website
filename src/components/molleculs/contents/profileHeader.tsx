@@ -20,8 +20,8 @@ function ProfileHeader({ expand, imgSize }: ProfileHeaderProps) {
   return (
     <article
       className={clsx(
-        "flex w-full flex-grow items-center gap-4 lg:flex-col lg:gap-0.5",
-        expand && "flex-col !items-start"
+        "flex w-full grow items-center gap-4 lg:flex-col lg:gap-0.5",
+        expand && "flex-col items-start!"
       )}
     >
       <div className="relative hidden w-full flex-col items-center overflow-hidden pb-2 lg:flex">
@@ -60,7 +60,7 @@ function ProfileHeader({ expand, imgSize }: ProfileHeaderProps) {
       />
       <hgroup className="mt-1 flex items-center gap-2">
         <Link href="/" passHref>
-          <h2 className="font-sora flex-grow whitespace-nowrap text-lg font-medium lg:text-xl">
+          <h2 className="font-sora grow whitespace-nowrap text-lg font-medium lg:text-xl">
             Ananda Fiqri
           </h2>
         </Link>
