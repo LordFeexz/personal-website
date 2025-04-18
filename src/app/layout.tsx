@@ -2,6 +2,7 @@ import MainViews from "@/components/organs/views/mainViews";
 import type { ChildrenProps } from "@/interfaces";
 import MainLayout from "@/layouts/mainLayout";
 import type { Metadata } from "next";
+import ME from "@/components/images/me.jpeg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -22,6 +23,13 @@ export const metadata: Metadata = {
     siteName: "Ananda Fiqri Website and Blog",
     locale: "id-ID",
     title: "Ananda Fiqri - Software Engineer",
+    images: {
+      url: ME.src,
+      height: ME.height,
+      width: ME.width,
+      alt: "Ananda Fiqri - Software Engineer",
+      type: "image/jpeg",
+    },
   },
   title: "Ananda Fiqri - Software Engineer",
   applicationName: "Ananda Fiqri - Personal Website",

@@ -13,8 +13,23 @@ import { VercelAnalytics } from "@/providers/vercel.analytics.providers";
 import { SpeedInsights } from "@/providers/vercel.speedInsight.providers";
 import Script from "next/script";
 import { cn } from "@/libs/utils";
+import type { WithContext, Person } from "schema-dts";
+import ME from "@/components/images/me.jpeg";
 
 export default function MainLayout({ children }: ChildrenProps) {
+  const schema: WithContext<Person> = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Ananda Fiqri",
+    sameAs: [
+      "https://github.com/lordFeexz",
+      "https://www.linkedin.com/in/ananda-fiqri",
+    ],
+    image: ME.src,
+    jobTitle: "Fullstack Developer",
+    description: "Ananda Fiqri Software Engineer",
+  };
+
   return (
     <html
       lang="en"
@@ -34,6 +49,9 @@ export default function MainLayout({ children }: ChildrenProps) {
           defer
           src="https://cloud.umami.is/script.js"
           data-website-id="9f350a97-faf5-4ba2-8b8f-91be057243dc"
+        />
+        <script
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema, null, 2) }}
         />
       </head>
       <body
