@@ -43,9 +43,9 @@ function ProjectCard({
         <div className="space-y-2 p-5">
           <Link href={`/projects/${slug}`} prefetch passHref>
             <CardItem as="hgroup">
-              <h1 className="font-sora cursor-pointer text-lg text-neutral-700 transition-all duration-300 dark:text-neutral-300 dark:hover:text-teal-400 lg:hover:text-teal-800">
+              <h2 className="font-sora cursor-pointer text-lg text-neutral-700 transition-all duration-300 dark:text-neutral-300 dark:hover:text-teal-400 lg:hover:text-teal-800">
                 {title}
-              </h1>
+              </h2>
               <p className="text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-400">
                 {desc.slice(0, 70) + (desc.length > 70 ? "..." : "")}
               </p>
